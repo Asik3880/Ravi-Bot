@@ -2213,7 +2213,6 @@ async def advantage_spell_chok(client, msg):
                 )
             ]
             for k, movie in enumerate(movielist[:5])]  # Limit to the first 5 movies
-        ]
         btn.append([InlineKeyboardButton(text="✘𝐂𝐋𝐎𝐒𝐄✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         spell_check_del = await msg.reply_photo(
             photo=(SPELL_IMG),
