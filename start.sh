@@ -1,7 +1,7 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://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@github.com/spidy85/NewTest.git /spidyfilterbot
+  git clone https://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@github.com/spidy85/backup.git /spidyfilterbot
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
   git clone $UPSTREAM_REPO /spidyfilterbot
