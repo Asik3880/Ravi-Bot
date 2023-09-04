@@ -2145,7 +2145,7 @@ async def advantage_spell_chok(client, msg):
                 callback_data=f"spolling#{reqstr1}#{k}",
             )
         ] for k, movie in enumerate(movielist)]
-        btn.append([InlineKeyboardButton(text="Close", callback_data=f'spol#{reqstr1}#close_spellcheck')])
+        btn.append([InlineKeyboardButton(text="✘𝐂𝐋𝐎𝐒𝐄✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         spell_check_del = await msg.reply_photo(
             photo=(SPELL_IMG),
             caption=(script.CUDNT_FND.format(mv_rqst)),
