@@ -74,8 +74,9 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🍿Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-ᴜᴘ Cʜᴀɴɴᴇʟ🍿", url=invite_link.invite_link
-                )
+                    "🍿Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-ᴜᴘ Cʜᴀɴɴᴇʟ🍿", url=invite_link.invite_link),
+                InlineKeyboardButton(
+                    "🕊 Wʜʏ I'ᴍ Jᴏɪɴɪɴɢ 🕊", callback_data='spidyjoin')
             ]
         ]
 
@@ -312,7 +313,7 @@ async def start(client, message):
             if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
                 loading_message = await message.reply("⋘Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs⋙")
                 await asyncio.sleep(0.5)
-                await loading_message.edit_text("Ｐｌｅａｓｅ Ｗａｉｔ....")
+                await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
                 # Prepare the inline keyboard
                 btn = [
                     [
@@ -383,7 +384,7 @@ async def start(client, message):
             if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
                 loading_message = await message.reply("⋘Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs⋙")
                 await asyncio.sleep(0.5)
-                await loading_message.edit_text("Ｐｌｅａｓｅ Ｗａｉｔ....")
+                await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
                 # Prepare the inline keyboard
                 btn = [
                     [
@@ -450,7 +451,7 @@ async def start(client, message):
     if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
         loading_message = await message.reply("⋘Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs⋙")
         await asyncio.sleep(0.5)
-        await loading_message.edit_text("Ｐｌｅａｓｅ Ｗａｉｔ....")
+        await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
         btn = [[
                 InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
                 InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
