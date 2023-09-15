@@ -74,9 +74,10 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🍿Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-ᴜᴘ Cʜᴀɴɴᴇʟ🍿", url=invite_link.invite_link),
+                    "🍿Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-ᴜᴘ Cʜᴀɴɴᴇʟ🍿", url=invite_link.invite_link)],
+            [
                 InlineKeyboardButton(
-                    "🕊 Wʜʏ I'ᴍ Jᴏɪɴɪɴɢ 🕊", callback_data='spidyjoin')
+                    "㋡ Wʜʏ I'ᴍ Jᴏɪɴɪɴɢ ❔", callback_data='spidyjoin')
             ]
         ]
 
