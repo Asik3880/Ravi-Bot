@@ -441,7 +441,7 @@ async def start(client, message):
                             ]
                         ]
                     )
-                    if IS_STREAM and db.has_premium_access(user)
+                    if IS_STREAM 
                     else InlineKeyboardMarkup(
                         [
                             [
@@ -523,7 +523,7 @@ async def start(client, message):
                         ]
                     ]
                 )
-            if IS_STREAM and db.has_premium_access(user)
+            if IS_STREAM
             else InlineKeyboardMarkup(                
                 [
                     [
