@@ -404,26 +404,27 @@ async def start(client, message):
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
             if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
-                loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
-                await asyncio.sleep(0.5)
-                await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
+                if not await db.has_premium_access(user):
+                    loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
+                    await asyncio.sleep(0.5)
+                    await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
                 # Prepare the inline keyboard
-                btn = [
-                    [
-                        InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
-                        InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                    btn = [
+                        [
+                            InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
+                            InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                        ]
                     ]
-                ]
 
                 # Display the final verification message (as a new message)
-                await message.reply_photo(
-                    photo=VRFY_IMG,
-                    caption=script.VERIFY_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-                    reply_markup=InlineKeyboardMarkup(btn)
-                )
+                    await message.reply_photo(
+                        photo=VRFY_IMG,
+                        caption=script.VERIFY_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+                        reply_markup=InlineKeyboardMarkup(btn)
+                    )
                 # Delete the loading message
-                await loading_message.delete()
-                return
+                    await loading_message.delete()
+                    return
             reply_file = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
