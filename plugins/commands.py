@@ -524,18 +524,18 @@ async def start(client, message):
                     ]
                 )
             if IS_STREAM and db.has_premium_access(user)
-                else InlineKeyboardMarkup(
+            else InlineKeyboardMarkup(                
+                [
                     [
-                        [
-                            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
-                            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                        ],[
-                            InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
-                        ]
+                        InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
+                        InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                    ],[
+                        InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
                     ]
-                )
+                ]
             )
         )
+    )
     # btn = [[
     #     InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
     # ]]
