@@ -586,6 +586,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await del_allg(query.message, 'gfilters')
         await query.answer("Done !")
         return
+    elif query.data == "buy":
+        btn = [            
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/Mr_SPIDY")],
+            [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
+        ]
+        reply_markup = InlineKeyboardMarkup(btn)
+        await query.message.reply_photo(
+            photo="https://telegra.ph/file/6f93008bbe1a173021de0.jpg",
+            caption="**⚡️Buy Premium Now\n\n ╭━━━━━━━━╮\n    Premium Plans\n  • ₹10 - 1 day (Trial)\n  • ₹25 - 1 Week (Trial)\n  • ₹50 - 1 Month\n  • ₹120 - 3 Months\n  • ₹220 - 6 Months\n  • ₹400 - 1 Year\n╰━━━━━━━━╯\n\nPremium Features ♤ᵀ&ᶜ\n\n☆ New/Old Movies and Series\n☆ High Quality available\n☆ Get Files Directly \n☆ High speed Download links\n☆ Full Admin support \n☆ Request will be completed in 1 hour if available.\n\nᴜᴘɪ ɪᴅ ➢ <code>upiid@paytm</code>\n\n⚠️Send SS After Payment⚠️\n\n~ After sending a Screenshot please give us some time to add you in the premium version.**",
+            reply_markup=reply_markup
+        )
+        return 
     elif query.data == "gfiltersdeleteallcancel": 
         await query.message.reply_to_message.delete()
         await query.message.delete()
@@ -817,7 +829,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             if settings['is_shortlink'] and clicked not in PREMIUM_USER:
                 if clicked == typed:
                     temp.SHORT[clicked] = query.message.chat.id
-                    await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=short_{file_id}")
+                    await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}}")
                     return
                 else:
                     await query.answer(f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !", show_alert=True)
@@ -887,23 +899,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
             fileName = {quote_plus(get_name(log_msg))}
             page_link = f"{STREAM_URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+            if await db.has_premium_access(user_id):
+                k
+                g = await query.message.reply_text("<b>Link Generating...</b>")
+                await asyncio.sleep(1)
+                await g.delete()
 
-            g = await query.message.reply_text("<b>Link Generating...</b>")
-            await asyncio.sleep(1)
-            await g.delete()
-
-            await log_msg.reply_text(
-                text=f"Usᴇʀ ID: {user_id}\n\nUsᴇʀ Nᴀᴍᴇ: {username} 𝐅𝐢𝐥𝐞 𝐍𝐚𝐦𝐞: {fileName}",
-                quote=True,
-                disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Fast Download ⚡", url=stream_link),
-                                                    InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
-            return await query.message.reply_text(
-                text="<b>Sᴛʀᴇᴀᴍ Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ...😁</b>",
-                quote=True,
-                disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Fast Download ⚡", url=stream_link),
-                                                    InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
+                await log_msg.reply_text(
+                    text=f"Usᴇʀ ID: {user_id}\n\nUsᴇʀ Nᴀᴍᴇ: {username} 𝐅𝐢𝐥𝐞 𝐍𝐚𝐦𝐞: {fileName}",
+                    quote=True,
+                    disable_web_page_preview=True,
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Fast Download ⚡", url=stream_link),
+                                                        InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
+                return await query.message.reply_text(
+                    text="<b>Sᴛʀᴇᴀᴍ Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ...😁</b>",
+                    quote=True,
+                    disable_web_page_preview=True,
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Fast Download ⚡", url=stream_link),
+                                                        InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
+            else:
+                await query.message.reply_text("<b>This feature is only for premium users 😄\n\nplease click on below button to buy subscription!!!</b>",
+                                              reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Buy subscribetion", callback_data='buy')]])
         except Exception as e:
             print(e)  # print the error message
             await query.answer(f"☣something went wrong. Check error:\n\n{e}", show_alert=True)
