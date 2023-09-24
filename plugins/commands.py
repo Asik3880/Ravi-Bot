@@ -540,21 +540,22 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"@YDZone {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
-        loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
-        await asyncio.sleep(0.5)
-        await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
-        btn = [[
-                InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
-                InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+        if not await db.has_premium_access(user):
+            loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
+            await asyncio.sleep(0.5)
+            await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
+            btn = [[
+                    InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
+                    InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
                 ]]
-        await message.reply_photo(
-            photo = VRFY_IMG,
-            caption=script.VERIFY_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+                await message.reply_photo(
+                photo = VRFY_IMG,
+                caption=script.VERIFY_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             # protect_content=True,
-            reply_markup=InlineKeyboardMarkup(btn)
-        )
-        await loading_message.delete()
-        return
+                reply_markup=InlineKeyboardMarkup(btn)
+            )
+            await loading_message.delete()
+            return
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
