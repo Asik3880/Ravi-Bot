@@ -919,7 +919,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                                         InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
             else:
                 await query.message.reply_text("<b>This feature is only for premium users 😄\n\nplease click on below button to buy subscription!!!</b>",
-                                              reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Buy subscribetion", callback_data='buy')]])
+                                              reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Buy subscribetion", callback_data='buy')]]))
         except Exception as e:
             print(e)  # print the error message
             await query.answer(f"☣something went wrong. Check error:\n\n{e}", show_alert=True)
