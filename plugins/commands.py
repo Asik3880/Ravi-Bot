@@ -1278,7 +1278,7 @@ async def remove_premium_cmd_handler(client, message):
     else:
         await message.reply_text("Usage: /remove_premium user_id")
         
-@Client.on_message(filters.command("/plans")
+@Client.on_message(filters.command("/plans"))
 async def plans_cmd_handler(client, message):
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:        
