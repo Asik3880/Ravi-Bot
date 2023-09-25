@@ -429,25 +429,45 @@ async def start(client, message):
             chat_id = temp.SHORT.get(user)
         settings = await get_settings(chat_id)
         if settings['is_shortlink'] and user not in PREMIUM_USER:
-            if not await db.has_premium_access(user):                
+            if not await db.has_premium_access(user):
+                has_free_trial = await db.get_free_trial_status(user_id)                                                        
                 files_ = await get_file_details(file_id)
                 files = files_[0]
                 g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
-                k = await client.send_message(chat_id=message.from_user.id,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(
-                        [
+                if has_free_trial:                    
+                    k = await client.send_message(chat_id=message.from_user.id,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(
                             [
-                                InlineKeyboardButton('📂 Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📂', url=g)
-                            ], [
-                                InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=await get_tutorial(chat_id))
-                            ], [                             
-                                InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs✨", callback_data="buy")
+                                [
+                                    InlineKeyboardButton('📂 Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📂', url=g)
+                                ], [
+                                    InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=await get_tutorial(chat_id))
+                                ], [                             
+                                    InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs✨", callback_data="buy")
+                                ]
                             ]
-                        ]
+                        )
                     )
-                )
-                await asyncio.sleep(1200)
-                await k.edit("<b>Yᴏᴜʀ ᴍᴇssᴀɢᴇ ɪs sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ!!!</b>")
-                return
+                    await asyncio.sleep(1200)
+                    await k.edit("<b>Yᴏᴜʀ ᴍᴇssᴀɢᴇ ɪs sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ!!!</b>")
+                    return
+                else:
+                    k = await client.send_message(chat_id=message.from_user.id,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(
+                            [
+                                [
+                                    InlineKeyboardButton('📂 Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📂', url=g)
+                                ], [
+                                    InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=await get_tutorial(chat_id))
+                                ], [                             
+                                    InlineKeyboardButton("✨ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs✨", callback_data="buy")
+                                ], [
+                                    InlineKeyboardButton("✨ɢᴇᴛ 5 ᴍɪɴᴜᴛᴇs ꜰʀᴇᴇ ᴛʀᴀɪʟ✨", callback_data="get_trail")
+                                ]
+                            ]
+                        )
+                    )
+                    await asyncio.sleep(1200)
+                    await k.edit("<b>Yᴏᴜʀ ᴍᴇssᴀɢᴇ ɪs sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ!!!</b>")
+                    return
     user = message.from_user.id
     files_ = await get_file_details(file_id)           
     if not files_:
@@ -455,16 +475,28 @@ async def start(client, message):
         try:
             if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
                 if not await db.has_premium_access(user):
+                    has_free_trial = await db.get_free_trial_status(user_id)
+                    
                     loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
                     await asyncio.sleep(0.5)
                     await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
                 # Prepare the inline keyboard
-                    btn = [
-                        [
-                            InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
-                            InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                    if has_free_trial:
+                        btn = [
+                            [
+                                InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
+                                InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                            ]
                         ]
-                    ]
+                    else:
+                        btn = [
+                            [
+                                InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
+                                InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                            ], [
+                                InlineKeyboardButton("✨ɢᴇᴛ 5 ᴍɪɴᴜᴛᴇs ꜰʀᴇᴇ ᴛʀᴀɪʟ✨", callback_data="get_trail")
+                            ]
+                        ]
 
                 # Display the final verification message (as a new message)
                     await message.reply_photo(
