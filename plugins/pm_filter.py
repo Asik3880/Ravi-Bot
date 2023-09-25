@@ -586,6 +586,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await del_allg(query.message, 'gfilters')
         await query.answer("Done !")
         return
+        
     elif query.data == "buy":
         btn = [            
             [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/Mr_SPIDY")],
@@ -598,6 +599,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup
         )
         return 
+
+   elif query.data == "get_trail":
+        userid = query.from_user.id
+        await db.give_free_trail(userid)
+        new_text = "**ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ꜰʀᴇᴇ ᴛʀᴀɪʟ ꜰᴏʀ 5 ᴍɪɴᴜᴛᴇs ꜰʀᴏᴍ ɴᴏᴡ 😀\n\nआप अब से 5 मिनट के लिए निःशुल्क ट्रायल का उपयोग कर सकते हैं 😀**"        
+        await query.message.edit_text(text=new_text)
+        return
+
     elif query.data == "gfiltersdeleteallcancel": 
         await query.message.reply_to_message.delete()
         await query.message.delete()
@@ -899,8 +908,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             fileName = {quote_plus(get_name(log_msg))}
             page_link = f"{STREAM_URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            if await db.has_premium_access(user_id):
-                k
+            if await db.has_premium_access(user_id):                
                 g = await query.message.reply_text("<b>Link Generating...</b>")
                 await asyncio.sleep(1)
                 await g.delete()
