@@ -430,7 +430,7 @@ async def start(client, message):
         settings = await get_settings(chat_id)
         if settings['is_shortlink'] and user not in PREMIUM_USER:
             if not await db.has_premium_access(user):
-                has_free_trial = await db.get_free_trial_status(user_id)                                                        
+                has_free_trial = await db.get_free_trial_status(user)                                                        
                 files_ = await get_file_details(file_id)
                 files = files_[0]
                 g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
@@ -475,7 +475,7 @@ async def start(client, message):
         try:
             if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
                 if not await db.has_premium_access(user):
-                    has_free_trial = await db.get_free_trial_status(user_id)
+                    has_free_trial = await db.get_free_trial_status(user)
                     
                     loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
                     await asyncio.sleep(0.5)
@@ -573,7 +573,7 @@ async def start(client, message):
         f_caption = f"@YDZone {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
         if not await db.has_premium_access(user):
-            has_free_trial = await db.get_free_trial_status(user_id)
+            has_free_trial = await db.get_free_trial_status(user)
             loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
             await asyncio.sleep(0.5)
             await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
