@@ -573,13 +573,24 @@ async def start(client, message):
         f_caption = f"@YDZone {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
         if not await db.has_premium_access(user):
+            has_free_trial = await db.get_free_trial_status(user_id)
             loading_message = await message.reply("❗ Cʜᴇᴄᴋɪɴɢ Vᴇʀɪғɪᴄᴀᴛɪᴏɴ Sᴛᴀᴛᴜs ❗")
             await asyncio.sleep(0.5)
             await loading_message.edit_text("🔗Gᴇɴᴇʀᴀᴛɪɴɢ Lɪɴᴋ Pʟᴢ Wᴀɪᴛ...🔗")
-            btn = [[
-                    InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
-                    InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
-                ]]
+            if has_free_trial:
+                btn = [[
+                        InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
+                        InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                    ]]
+            else:
+                btn = [[
+                        InlineKeyboardButton("♻️ Vᴇʀɪғʏ ♻️", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=")),
+                        InlineKeyboardButton("⚠️ Hᴏᴡ Tᴏ Vᴇʀɪғʏ ⚠️", url=HOW_TO_VERIFY)
+                    ],[
+                       InlineKeyboardButton("✨ɢᴇᴛ 5 ᴍɪɴᴜᴛᴇs ꜰʀᴇᴇ ᴛʀᴀɪʟ✨", callback_data="get_trail")  
+                    ]]
+                
+           
             await message.reply_photo(                
                 photo = VRFY_IMG,
                 caption=script.VERIFY_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
