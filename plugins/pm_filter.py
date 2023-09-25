@@ -600,11 +600,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         return 
 
-   elif query.data == "get_trail":
+    elif query.data == "get_trail":
         userid = query.from_user.id
         await db.give_free_trail(userid)
         new_text = "**ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ꜰʀᴇᴇ ᴛʀᴀɪʟ ꜰᴏʀ 5 ᴍɪɴᴜᴛᴇs ꜰʀᴏᴍ ɴᴏᴡ 😀\n\nआप अब से 5 मिनट के लिए निःशुल्क ट्रायल का उपयोग कर सकते हैं 😀**"        
-        await query.message.edit_text(text=new_text)
+        await query.message.reply_text(text=new_text)
         return
 
     elif query.data == "gfiltersdeleteallcancel": 
