@@ -50,9 +50,9 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "YourDemandZone")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'YourDemandZone')
 
 # Others
-VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'urlshortx.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'aacda989a636df49b60ebd363b56dd5e82095eec')
+VERIFY = bool(environ.get('VERIFY', True))
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'ziplinker.net')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'a4de59ef1ac0249385ce0d54796c9d0bd4eebb63')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "7")
