@@ -67,23 +67,23 @@ async def give_filter(client, message):
         if total_results == 0:
             return
         else:
-            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @YDMovieZone</b>")
+            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ‌ᴜᴇʀʏ {search}.\n\n❇️ Jᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @FilmymodMovies\n\nAre Bhai...!!!\nPhele Movies Group Me Jaake Movie Search karo Movie Na Mile To uske Baad Is Group Me Ake Admin Ko Batao\n\n♻️ MOVIE REQUEST FORMAT ♻️\n\n🔹Type Movie/Series Name With Release Year\n➢ Example: Kantara 2022</b>",   
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥", url=f"https://t.me/FilmymodMovies")]]))
 
-# @Client.on_message(filters.private & filters.text & filters.incoming)
-# async def pm_text(bot, message):
-#     content = message.text
-#     user = message.from_user.first_name
-#     user_id = message.from_user.id
-#     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-#     if user_id in ADMINS: return # ignore admins
-#     await message.reply_text(
-#          text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ <a href=https://telegram.me/+ps2An00KwZYwNTRl>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",   
-#          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"telegram.me/YDMovieZone")]])
-#     )
-#     await bot.send_message(
-#         chat_id=LOG_CHANNEL,
-#         text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
-#     )
+ @Client.on_message(filters.private & filters.text & filters.incoming)
+ async def pm_text(bot, message):
+     content = message.text
+     user = message.from_user.first_name
+     user_id = message.from_user.id
+     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
+     if user_id in ADMINS: return # ignore admins
+    await message.reply_text(
+         text=f"<b>Hᴇʏ {user} 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ☞ @FilmymodMovies\n\nYᴀʜᴀ ᴀᴀᴘ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɴʜɪ ᴋᴀʀ ꜱᴀᴋᴛᴇ ʜᴏ. ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴍᴇ ᴊᴀᴀᴋᴇ ᴍᴏᴠɪᴇ ᴏʀ ᴡᴇʙꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇsᴛ ᴋᴀʀᴏ ☟</b>",   
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/FilmymodMovies")]]))
+    await bot.send_message(
+        chat_id=LOG_CHANNEL,
+        text=f"<b>👻 ⚡ᴀᴜᴛᴏ ᴍᴏᴠɪᴇꜱ ꜱᴇᴀʀᴄʜ ʙᴏᴛ⚡ 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝ᴍᴇssᴀɢᴇ:-{content}\n\n👶🏻ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ:-{user}\n\n🃏ᴜꜱᴇʀ ɪᴅ:-{user_id}</b>"
+    )
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -255,7 +255,10 @@ async def advantage_spoll_choker(bot, query):
                 reqstr = await bot.get_users(reqstr1)
                 if NO_RESULTS_MSG:
                     await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
-                k = await query.message.edit(script.MVE_NT_FND)
+                btn = [[
+                    InlineKeyboardButton("🔰 𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗧𝗼 𝗔𝗱𝗺𝗶𝗻 🔰", url=f"https://t.me/Filmymod_Support")
+                ]]
+                k = await query.message.edit(script.MVE_NT_FND, reply_markup=InlineKeyboardMarkup(btn))
                 await asyncio.sleep(10)
                 await k.delete()
 
@@ -589,7 +592,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "buy":
         btn = [            
-            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/Mr_SPIDY")],
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url="t.me/Filmymod7")],
             [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
@@ -1220,7 +1223,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
                  InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("🌿 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🥀", url="telegram.me/YDMovieZone")
+                 InlineKeyboardButton("🌿 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🥀", url="telegram.me/FilmymodMovies")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1245,7 +1248,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                  InlineKeyboardButton('Jᴏɪɴ Cʜᴀɴɴᴇʟ', url=link.invite_link),
                  InlineKeyboardButton("Vɪᴇᴡ Sᴛᴀᴛᴜs", url=f"{query.message.link}")
                ],[
-                 InlineKeyboardButton("🌿 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🥀", url="telegram.me/YDMovieZone")
+                 InlineKeyboardButton("🌿 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🥀", url="telegram.me/FilmymodMovies")
                ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
@@ -1460,8 +1463,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('✉ Cᴏɴᴛᴀᴄᴛ', url='https://t.me/Mr_SPIDY'),
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about')
+            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about'),
+            InlineKeyboardButton('✪ Cᴏɴᴛᴀᴄᴛ', url='https://t.me/Filmymod7')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1725,7 +1728,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
-                InputMediaPhoto("https://te.legra.ph/file/d530333a7df5211566f62.jpg")
+                InputMediaPhoto("https://telegra.ph/file/21200120f5f7806f5ba03.jpg")
             )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -1751,7 +1754,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton("🍂 Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ 🍂", url=SPRT_CHNL)
                 ],[
-                    InlineKeyboardButton("🌼 Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🌼", url='https://t.me/+3fKCp28WwtViYzEx')
+                    InlineKeyboardButton("🌼 Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🌼", url='https://t.me/+ym9eEFNVD7ZjOTk9')
                 ],[
                     InlineKeyboardButton("🥀 Mᴀɪɴ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ 🥀", url=CHNL_LNK)
                 ],[
@@ -1763,7 +1766,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
-                InputMediaPhoto("https://graph.org/file/7d7a262a767f61855f3cf.jpg")
+                InputMediaPhoto("https://telegra.ph/file/21200120f5f7806f5ba03.jpg")
             )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -1801,7 +1804,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "shortlink_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/Mr_SPIDYBot")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/Filmymod7")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -2059,7 +2062,7 @@ async def auto_filter(client, msg, spoll=False):
                 cap += f"<b>\n📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            cap = f"<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ☞ {search}\n\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ ☞ {message.from_user.mention}\n\nʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ ☞ {remaining_seconds} sᴇᴄᴏɴᴅs\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ ☞ : {message.chat.title} \n\n⚠️ ᴀꜰᴛᴇʀ 5 ᴍɪɴᴜᴛᴇꜱ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ 🗑️\n\n</b>"
+            cap = f"<b>Hᴇʏ {message.from_user.mention} ❤️\n\n📂 I Fᴏᴜɴᴅ ✨ {total_results} Rᴇsᴜʟᴛs ғᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ ☞ {search}\n\n</b>"
         else:
             cap = f"<b>Hᴇʏ {message.from_user.mention}, Fᴏᴜɴᴅ {total_results} Rᴇsᴜʟᴛs ғᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search}\n\n</b>"
             cap+="<b><u>📚 Requested Files 👇</u></b>\n\n"
