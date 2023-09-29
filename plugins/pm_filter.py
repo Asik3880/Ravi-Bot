@@ -70,20 +70,20 @@ async def give_filter(client, message):
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ‌ᴜᴇʀʏ {search}.\n\n❇️ Jᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @FilmymodMovies\n\nAre Bhai...!!!\nPhele Movies Group Me Jaake Movie Search karo Movie Na Mile To uske Baad Is Group Me Ake Admin Ko Batao\n\n♻️ MOVIE REQUEST FORMAT ♻️\n\n🔹Type Movie/Series Name With Release Year\n➢ Example: Kantara 2022</b>",   
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥", url=f"https://t.me/FilmymodMovies")]]))
 
- @Client.on_message(filters.private & filters.text & filters.incoming)
- async def pm_text(bot, message):
-     content = message.text
-     user = message.from_user.first_name
-     user_id = message.from_user.id
-     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-     if user_id in ADMINS: return # ignore admins
-    await message.reply_text(
-         text=f"<b>Hᴇʏ {user} 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ☞ @FilmymodMovies\n\nYᴀʜᴀ ᴀᴀᴘ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɴʜɪ ᴋᴀʀ ꜱᴀᴋᴛᴇ ʜᴏ. ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴍᴇ ᴊᴀᴀᴋᴇ ᴍᴏᴠɪᴇ ᴏʀ ᴡᴇʙꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇsᴛ ᴋᴀʀᴏ ☟</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/FilmymodMovies")]]))
-    await bot.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"<b>👻 ⚡ᴀᴜᴛᴏ ᴍᴏᴠɪᴇꜱ ꜱᴇᴀʀᴄʜ ʙᴏᴛ⚡ 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝ᴍᴇssᴀɢᴇ:-{content}\n\n👶🏻ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ:-{user}\n\n🃏ᴜꜱᴇʀ ɪᴅ:-{user_id}</b>"
-    )
+# @Client.on_message(filters.private & filters.text & filters.incoming)
+# async def pm_text(bot, message):
+ #    content = message.text
+ #    user = message.from_user.first_name
+  #   user_id = message.from_user.id
+  #   if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
+  #   if user_id in ADMINS: return # ignore admins
+#    await message.reply_text(
+ #        text=f"<b>Hᴇʏ {user} 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ☞ @FilmymodMovies\n\nYᴀʜᴀ ᴀᴀᴘ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɴʜɪ ᴋᴀʀ ꜱᴀᴋᴛᴇ ʜᴏ. ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴍᴇ ᴊᴀᴀᴋᴇ ᴍᴏᴠɪᴇ ᴏʀ ᴡᴇʙꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇsᴛ ᴋᴀʀᴏ ☟</b>",   
+  #       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/FilmymodMovies")]]))
+  #  await bot.send_message(
+   #     chat_id=LOG_CHANNEL,
+  #      text=f"<b>👻 ⚡ᴀᴜᴛᴏ ᴍᴏᴠɪᴇꜱ ꜱᴇᴀʀᴄʜ ʙᴏᴛ⚡ 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝ᴍᴇssᴀɢᴇ:-{content}\n\n👶🏻ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ:-{user}\n\n🃏ᴜꜱᴇʀ ɪᴅ:-{user_id}</b>"
+  #  )
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
