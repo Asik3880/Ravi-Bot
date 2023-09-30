@@ -76,21 +76,21 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🍿Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-ᴜᴘ Cʜᴀɴɴᴇʟ🍿", url=invite_link.invite_link)],
+                    "♻️ 𝗝𝗼𝗶𝗻 𝗠𝘆 𝗨𝗽𝗱𝗮𝘁𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ♻️", url=invite_link.invite_link)],
             [
                 InlineKeyboardButton(
-                    "㋡ Wʜʏ I'ᴍ Jᴏɪɴɪɴɢ ❔", callback_data='spidyjoin')
+                    "㋡ 𝗪𝗵𝘆 𝗜'𝗺 𝗝𝗼𝗶𝗻𝗶𝗻𝗴 ❔", callback_data='spidyjoin')
             ]
         ]
 
         if message.command[1] != "subscribe":
             try:
                 kk, file_id = message.command[1].split("_", 1)
-                btn.append([InlineKeyboardButton("🔄 Tʀʏ Aɢᴀɪɴ", callback_data=f"checksub#{kk}#{file_id}")])
+                btn.append([InlineKeyboardButton("🔄 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻", callback_data=f"checksub#{kk}#{file_id}")])
             except (IndexError, ValueError):
-                btn.append([InlineKeyboardButton("🔄 Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
+                btn.append([InlineKeyboardButton("🔄 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_photo(
-            photo = "https://graph.org/file/4407f9cf0e92af03a49c3.jpg",
+            photo = "https://telegra.ph/file/5d344d27d66ba736c506d.jpg",
             chat_id=message.from_user.id,
             # text="**You are not in our channel given below so you don't get the movie file...\n\nIf you want the movie file, click on the '🍿ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ🍿' button below and join our back-up channel, then click on the '🔄 Try Again' button below...\n\nThen you will get the movie files...**",
             caption=script.FORCE_SUB,
