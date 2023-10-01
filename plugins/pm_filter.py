@@ -68,7 +68,8 @@ async def give_filter(client, message):
             return
         else:
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} Rᴇsᴜʟᴛs Aʀᴇ Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ ☞ {search}. \n\n❇️ Jᴏɪɴ Aɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @FilmymodMovies\n\nPʟᴇᴀꜱᴇ Cʟɪᴄᴋ Oɴ Aʙᴏᴠᴇ Bᴜᴛᴛᴏɴꜱ & Sᴇᴀʀᴄʜ Tʜᴇɪʀ !!  ☟</b>",   
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥", url=f"https://t.me/FilmymodMovies")]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url=f"https://t.me/FilmymodMovies"),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🤔 Hᴏᴡ Tᴏ Sᴇᴀʀᴄʜ", url=f"https://t.me/How_To_Download_Movies321/14")]]))
 
 # @Client.on_message(filters.private & filters.text & filters.incoming)
 # async def pm_text(bot, message):
