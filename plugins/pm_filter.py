@@ -937,8 +937,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
             fileName = {quote_plus(get_name(log_msg))}
             page_link = f"{STREAM_URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            if await db.has_premium_access(user_id):                
+            stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"                
                 buttons = [
                     InlineKeyboardButton(
                         "📥 Fast Download",
@@ -949,15 +948,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         url=page_link,
                     ),
                 ]
+            
             query.message.reply_markup = query.message.reply_markup or []
             # remove the first row
             query.message.reply_markup.inline_keyboard.pop(0)
             query.message.reply_markup.inline_keyboard.insert(0, buttons)
             await query.message.edit_reply_markup(InlineKeyboardMarkup(query.message.reply_markup.inline_keyboard))
             
-        else:
-                await query.message.reply_text("<b>This feature is only for premium users 😄\n\nplease click on below button to buy subscription!!!</b>",
-                                              reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Buy subscribetion", callback_data='buy')]]))
         except Exception as e:
             print(e)  # print the error message
             await query.answer(f"☣something went wrong. Check error:\n\n{e}", show_alert=True)
