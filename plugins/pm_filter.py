@@ -925,7 +925,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{files.file_name}"
         await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
-
     elif query.data.startswith("gen_stream_link"):
         _, file_id = query.data.split(":")
         try:
@@ -938,24 +937,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             fileName = {quote_plus(get_name(log_msg))}
             page_link = f"{STREAM_URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            if await db.has_premium_access(user_id):                
-                g = await query.message.reply_text("<b>Link Generating...</b>")
-                await asyncio.sleep(1)
-                await g.delete()
-
-                await log_msg.reply_text(
-                    text=f"Usᴇʀ ID: {user_id}\n\nUsᴇʀ Nᴀᴍᴇ: {username} 𝐅𝐢𝐥𝐞 𝐍𝐚𝐦𝐞: {fileName}",
-                    quote=True,
-                    disable_web_page_preview=True,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Fast Download ⚡", url=stream_link),
-                                                        InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
-                return await query.message.reply_text(
-                    text="<b>Sᴛʀᴇᴀᴍ Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ...😁</b>",
-                    quote=True,
-                    disable_web_page_preview=True,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Fast Download ⚡", url=stream_link),
-                                                        InlineKeyboardButton('🎥 Stream/Watch online', url=page_link)]]))
-            else:
+            buttons = [
+                    InlineKeyboardButton(
+                        "📥 Fast Download",
+                        url=stream_link,
+                    ),
+                    InlineKeyboardButton(
+                        "🖥 Watch Online",
+                        url=page_link,
+                    ),
+                ]
+            query.message.reply_markup = query.message.reply_markup or []
+            # remove the first row
+            query.message.reply_markup.inline_keyboard.pop(0)
+            query.message.reply_markup.inline_keyboard.insert(0, buttons)
+            await query.message.edit_reply_markup(InlineKeyboardMarkup(query.message.reply_markup.inline_keyboard))
+            
+        else:
                 await query.message.reply_text("<b>This feature is only for premium users 😄\n\nplease click on below button to buy subscription!!!</b>",
                                               reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Buy subscribetion", callback_data='buy')]]))
         except Exception as e:
