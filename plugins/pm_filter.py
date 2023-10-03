@@ -67,7 +67,7 @@ async def give_filter(client, message):
         if total_results == 0:
             return
         else:
-            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention} ❤️,\n\n{str(total_results)} Rᴇsᴜʟᴛs Aʀᴇ Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ ☞ {search}. \n\n❇️ Jᴏɪɴ Aɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @FilmymodMovies\n\nPʟᴇᴀꜱᴇ Cʟɪᴄᴋ Oɴ Aʙᴏᴠᴇ Bᴜᴛᴛᴏɴꜱ & Sᴇᴀʀᴄʜ Tʜᴇɪʀ !!  ☟</b>",   
+            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention} ❤️,\n\n{str(total_results)} Rᴇsᴜʟᴛs Aʀᴇ Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ ☞ {search}. \n\n⚠️ Tʜɪs Is A Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ Sᴏ Tʜᴀᴛ Yᴏᴜ Cᴀɴ'ᴛ Gᴇᴛ Fɪʟᴇs Fʀᴏᴍ Hᴇʀᴇ...\n\nPʟᴇᴀꜱᴇ Cʟɪᴄᴋ Oɴ Aʙᴏᴠᴇ Bᴜᴛᴛᴏɴꜱ & Sᴇᴀʀᴄʜ Tʜᴇɪʀ !!  ☟</b>",   
             reply_markup=InlineKeyboardMarkup(
                 [[
                   InlineKeyboardButton("📝 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url=f"https://t.me/FilmymodMovies")
