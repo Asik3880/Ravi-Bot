@@ -937,18 +937,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
             fileName = {quote_plus(get_name(log_msg))}
             page_link = f"{STREAM_URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"                
-            buttons = [
-                    InlineKeyboardButton(
-                        "📥 Fast Download",
-                        url=stream_link,
-                    ),
-                    InlineKeyboardButton(
-                        "🖥 Watch Online",
-                        url=page_link,
-                    ),
-                ]
-            
+            stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}" 
+            if await db.has_premium_access(user_id):                
+                g = await query.message.reply_text("<b>Lɪɴᴋ Gᴇɴᴇʀᴀᴛɪɴɢ...</b>")
+                await asyncio.sleep(1)
+                await g.delete()               
+                    buttons = [
+                            InlineKeyboardButton(
+                                "📥 Fast Download",
+                                url=stream_link,
+                            ),
+                            InlineKeyboardButton(
+                                "🖥 Watch Online",
+                                url=page_link,
+                            ),
+                        ]
+            else:
+                await query.message.reply_text("<b>Tʜɪs Fᴇᴀᴛᴜʀᴇ Is Oɴʟʏ Fᴏʀ Pʀᴇᴍɪᴜᴍ Usᴇʀs 😄\n\nPʟᴇᴀsᴇ Cʟɪᴄᴋ Oɴ Bᴇʟᴏᴡ Bᴜᴛᴛᴏɴ Tᴏ Bᴜʏ Sᴜʙsᴄʀɪᴘᴛɪᴏɴ!!!</b>",
+                                              reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✨ Bᴜʏ Sᴜʙsᴄʀɪᴘᴛɪᴏɴ ✨", callback_data='buy')]]))
             query.message.reply_markup = query.message.reply_markup or []
             # remove the first row
             query.message.reply_markup.inline_keyboard.pop(0)
