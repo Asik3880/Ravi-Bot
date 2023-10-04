@@ -938,6 +938,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             fileName = {quote_plus(get_name(log_msg))}
             page_link = f"{STREAM_URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             stream_link = f"{STREAM_URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}" 
+            buttons = None  # Define buttons with None
             if await db.has_premium_access(user_id):                
                 g = await query.message.reply_text("<b>Lɪɴᴋ Gᴇɴᴇʀᴀᴛɪɴɢ...</b>")
                 await asyncio.sleep(1)
