@@ -942,16 +942,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 g = await query.message.reply_text("<b>Lɪɴᴋ Gᴇɴᴇʀᴀᴛɪɴɢ...</b>")
                 await asyncio.sleep(1)
                 await g.delete()               
-                    buttons = [
-                            InlineKeyboardButton(
-                                "📥 Fast Download",
-                                url=stream_link,
-                            ),
-                            InlineKeyboardButton(
-                                "🖥 Watch Online",
-                                url=page_link,
-                            ),
-                        ]
+                buttons = [
+                        InlineKeyboardButton(
+                            "📥 Fast Download",
+                            url=stream_link,
+                        ),
+                        InlineKeyboardButton(
+                            "🖥 Watch Online",
+                            url=page_link,
+                        ),
+                    ]
             else:
                 await query.message.reply_text("<b>Tʜɪs Fᴇᴀᴛᴜʀᴇ Is Oɴʟʏ Fᴏʀ Pʀᴇᴍɪᴜᴍ Usᴇʀs 😄\n\nPʟᴇᴀsᴇ Cʟɪᴄᴋ Oɴ Bᴇʟᴏᴡ Bᴜᴛᴛᴏɴ Tᴏ Bᴜʏ Sᴜʙsᴄʀɪᴘᴛɪᴏɴ!!!</b>",
                                               reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✨ Bᴜʏ Sᴜʙsᴄʀɪᴘᴛɪᴏɴ ✨", callback_data='buy')]]))
