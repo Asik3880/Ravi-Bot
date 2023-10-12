@@ -316,7 +316,7 @@ async def start(client, message):
             
         g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
         if not await db.has_premium_access(user):
-            k = await client.send_message(chat_id=user,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{file1.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(file1.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(
+            k = await client.send_message(chat_id=user,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{file1.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(file1.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n𝘕𝘰𝘵𝘦: 𝘛𝘩𝘪𝘴 𝘮𝘦𝘴𝘴𝘢𝘨𝘦 𝘪𝘴 𝘥𝘦𝘭𝘦𝘵𝘦𝘥 𝘪𝘯 20 𝘮𝘪𝘯𝘴 𝘵𝘰 𝘢𝘷𝘰𝘪𝘥 𝘤𝘰𝘱𝘺𝘳𝘪𝘨𝘩𝘵𝘴. 𝘚𝘢𝘷𝘦 𝘵𝘩𝘦 𝘭𝘪𝘯𝘬 𝘵𝘰 𝘚𝘰𝘮𝘦𝘸𝘩𝘦𝘳𝘦 𝘦𝘭𝘴𝘦</b>", reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton('📂 Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📂', url=g)
@@ -337,24 +337,24 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=(
                     InlineKeyboardMarkup(
-            #    [
-            #       [
-            #           InlineKeyboardButton('⚡ Watch Online/ Fast Download ⚡', callback_data=f'gen_stream_link:{file_id}')
-            #       ],[
-            #           InlineKeyboardButton('🔰 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥 🔰', url=f'https://t.me/FilmymodMovies')
-            #       ]
-            #    ]
-          #  )
-          # if IS_STREAM
-          # else InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton('🔰 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥 🔰', url=f'https://t.me/FilmymodMovies')
-                    ]
-                ]
+                        [
+                            [
+                                InlineKeyboardButton('⚡ Watch Online/ Fast Download ⚡', callback_data=f'gen_stream_link:{file_id}')
+                            ],[
+                                InlineKeyboardButton('🔰 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥 🔰', url=f'https://t.me/FilmymodMovies')
+                            ]
+                        ]
+                    )
+                    if IS_STREAM
+                    else InlineKeyboardMarkup(
+                        [
+                            [
+                                InlineKeyboardButton('🔰 𝙈𝙤𝙫𝙞𝙚 𝙎𝙚𝙖𝙧𝙘𝙝 𝙂𝙧𝙤𝙪𝙥 🔰', url=f'https://t.me/FilmymodMovies')
+                            ]
+                        ]
+                    )
+                )
             )
-        )
-    )
             
             
             
