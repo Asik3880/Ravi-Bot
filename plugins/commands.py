@@ -464,15 +464,13 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
-                   [
-                        [
-                            InlineKeyboardButton("🔰 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🔰", url=GRP_LNK)
-                        ], [
-                            InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data=f"close_data"))
-                        ]
+                    [
+                     [
+                      InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data=f"close_data")
+                     ]
                     ]
                 )
-            )
+             )
 #    btn = [[
 #        InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
 #    ]]
