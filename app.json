@@ -48,7 +48,7 @@
         },
         "LOG_CHANNEL": {
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
-            "value": "-1001860290002",
+            "value": "-1002095427762",
             "required": true
         },
         "AUTH_USERS": {
