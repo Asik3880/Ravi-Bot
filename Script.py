@@ -1,36 +1,42 @@
 class script(object):
-    START_TXT = """<b>Hᴇʟʟᴏ {},
-Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ As Aᴅᴍɪɴ Aɴᴅ Eɴᴊᴏʏ 😍</b>"""
+    START_TXT = """<b>Hᴇʏ {} {}
 
+✦ ɪ ᴀᴍ ᴘᴏᴡᴇʀғᴜʟ ᴀᴜᴛᴏ-ғɪʟᴛᴇʀ ʙᴏᴛ.
+✦ ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴍᴏᴠɪᴇs ᴀɴᴅ ᴡᴇʙ sᴇʀɪᴇs.
+✦ ɪᴛs ᴇᴀsʏ ᴛᴏ ᴜsᴇ ᴍᴇ. ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ.
+
+<a href="https://t.me/Filmymod123">©Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ Fɪʟᴍʏᴍᴏᴅ</a></b>"""
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Mʏ Cᴏᴍᴍᴀɴᴅs Fᴏʀ Hᴇʟᴘ.</b>"""
 
-    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ: {}
-✯ Cʀᴇᴀᴛᴏʀ: <a href='https://t.me/Mr_SPIDY'>Mʀ.SPIDY🕷</a>
-✯ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
-✯ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
-✯ DᴀᴛᴀBᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
-✯ Bᴏᴛ Sᴇʀᴠᴇʀ: Pʀɪᴠᴀᴛᴇ
-✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: v2.7.1 [ Sᴛᴀʙʟᴇ ]</b>"""
-
-    SOURCE_TXT = """<b>Nᴏᴛᴇ:
-𝐖𝐚𝐧𝐭 𝐀 𝐁𝐨𝐭 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬:
+    ABOUT_TXT = """<b>
+ 🤖 ᴍʏ ɴᴀᴍᴇ : {}
+ 👨‍💻 ᴄʀᴇᴀᴛᴏʀ : <a href='https://t.me/FilmymodOwner_Bot'>Filmymod Owner</a>
+ 📚 ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>
+ 📝 ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 3</a>
+ ♻️ ᴅᴀᴛᴀ ʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a>
+ 📡 ʜᴏsᴛᴇᴅ ᴏɴ  : <a href='https://www.heroku.com/'>Heroku</a>
+ 🥶 ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ3.0 [sᴛᴀʙʟᴇ​]</b>"""
+    
+    SOURCE_TXT = """
+<b>❍ 𝐍𝐨𝐭𝐞: 𝐘𝐨𝐮 𝐖𝐚𝐧𝐭 𝐀 𝐁𝐨𝐭 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬 
 ✭ I ᴡɪʟʟ ᴄʀᴇᴀᴛᴇ ᴏɴᴇ ʙᴏᴛ ғᴏʀ ʏᴏᴜ.
-✭ Cᴏɴᴛᴀᴄᴛ ᴛᴏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ ☟</b>"""
-
+✭ Bᴏᴛ ɪs Rᴇᴅᴇsɪɢɴ ʙʏ <a href='https://t.me/FilmymodOwner_Bot'>Filmymod Owner</a>
+✭ Cᴏɴᴛᴀᴄᴛ ᴛᴏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ ☟
+</b>"""
     MISC_TXT = """<b>Hᴇʏ {}
-
+    
 /set_shortner - Tᴏ Sᴇᴛ Cᴜsᴛᴏᴍ Sʜᴏʀᴛᴇɴᴇʀ
 /setshortneron - Tᴏ Sᴇᴛ Sʜᴏʀᴛɴᴇʀ Oɴ
 /setshortneroff - Tᴏ Sᴇᴛ Sʜᴏʀᴛɴᴇʀ Oғғ
 /set_tutorial - Tᴏ Sᴇᴛ Cᴜsᴛᴏᴍ Tᴜᴛᴏʀɪᴀʟ
 /remove_tutorial - Tᴏ Rᴇᴍᴏᴠᴇ Tᴜᴛᴏʀɪᴀʟ
-/get_info - Tᴏ Cʜᴇᴄᴋ Yᴏᴜʀ Vᴀʟᴜᴇs
+/shortner_info - Tᴏ Cʜᴇᴄᴋ Yᴏᴜʀ Vᴀʟᴜᴇs
 
 ♻️ Exᴀᴍᴘʟᴇs :
-👉/set_shortner urlshortx.com aacda989a636df49b60ebd363b56dd5e82095eec
+👉 <code>/set_shortner onepagelink.in 24d0af2f976834471272f1b477e4cc37f82921e1</code>
 
-👉/set_tutorial https://t.me/YourDemandZone/76 </b>"""
+👉 <code>/set_tutorial https://t.me/Filmymod123</code> </b>"""
 
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
 - ꜰɪʟᴛᴇʀ ɪꜱ ᴀ ꜰᴇᴀᴛᴜʀᴇ ᴡᴇʀᴇ ᴜꜱᴇʀꜱ ᴄᴀɴ ꜱᴇᴛ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ʀᴇᴘʟɪᴇꜱ ꜰᴏʀ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴋᴇʏᴡᴏʀᴅ ᴀɴᴅ ɪ ᴡɪʟʟ ʀᴇꜱᴘᴏɴᴅ ᴡʜᴇɴᴇᴠᴇʀ ᴀ ᴋᴇʏᴡᴏʀᴅ ɪꜱ ꜰᴏᴜɴᴅ ɪɴ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ
@@ -51,7 +57,7 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 2. ᴛʜɪꜱ ʙᴏᴛ ꜱᴜᴘᴘᴏʀᴛꜱ ʙᴜᴛᴛᴏɴꜱ ᴡɪᴛʜ ᴀɴʏ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ ᴛʏᴘᴇ.
 3. ʙᴜᴛᴛᴏɴꜱ ꜱʜᴏᴜʟᴅ ʙᴇ ᴘʀᴏᴘᴇʀʟʏ ᴘᴀʀꜱᴇᴅ ᴀꜱ ᴍᴀʀᴋᴅᴏᴡɴ ꜰᴏʀᴍᴀᴛ
 <b>ᴜʀʟ ʙᴜᴛᴛᴏɴꜱ:</b>
-<code>[Button Text](buttonurl:https://t.me/YourDemandZone)</code>
+<code>[Button Text](buttonurl:https://t.me/Filmymod123)</code>
 <b>ᴀʟᴇʀᴛ ʙᴜᴛᴛᴏɴꜱ:</b>
 <code>[Button Text](buttonalert:ᴛʜɪꜱ ɪꜱ ᴀɴ ᴀʟᴇʀᴛ ᴍᴇꜱꜱᴀɢᴇ)</code>"""
 
@@ -117,70 +123,87 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 ★ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code></b>
 •❅─────✧❅✦❅✧─────❅•"""
 
-    LOG_TEXT_G = """#NewGroup
+    LOG_TEXT_G = """###NewGroup
 Gʀᴏᴜᴘ = {}(<code>{}</code>)
 Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
 Aᴅᴅᴇᴅ Bʏ - {}"""
 
-    LOG_TEXT_P = """#NewUser
+    LOG_TEXT_P = """###NewUser
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
 
-    ALRT_TXT = """ʜᴇʟʟᴏ {},
-ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,
-ʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ..."""
+    ALRT_TXT = """🙋‍♂ Hᴇʏ {},
+ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,
+ʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️"""
 
-    OLD_ALRT_TXT = """ʜᴇʏ {},
+    OLD_ALRT_TXT = """🙋‍♂ Hᴇʏ {},
 ʏᴏᴜ ᴀʀᴇ ᴜꜱɪɴɢ ᴏɴᴇ ᴏꜰ ᴍʏ ᴏʟᴅ ᴍᴇꜱꜱᴀɢᴇꜱ, 
-ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴛʜᴇ ʀᴇQᴜᴇꜱᴛ ᴀɢᴀɪɴ."""
+ᴘʟᴇᴀꜱᴇ ꜱᴇɴᴅ ᴛʜᴇ ʀᴇǫᴜᴇꜱᴛ ᴀɢᴀɪɴ...‼️"""
 
-    CUDNT_FND = """<b>Sᴘᴇʟʟɪɴɢ Mɪsᴛᴀᴋᴇ Bʀᴏ ‼️
-Dᴏɴ'ᴛ Wᴏʀʀʏ 😊, Cʜᴏᴏsᴇ Tʜᴇ Cᴏʀʀᴇᴄᴛ Oɴᴇ Bᴇʟᴏᴡ👇</b>"""
+    CUDNT_FND = """<b>Sᴘᴇʟʟɪɴɢ Mɪsᴛᴀᴋᴇ Bʀᴏ ~~{}~~ ‼️
+Dᴏɴ'ᴛ Wᴏʀʀʏ 😊, Cʜᴏᴏsᴇ Tʜᴇ Cᴏʀʀᴇᴄᴛ Oɴᴇ Bᴇʟᴏᴡ 👇</b>"""
 
-    I_CUDNT = """<b>sᴏʀʀʏ ɪ ᴄᴏᴜʟᴅɴ'ᴛ ғɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ/sᴇʀɪᴇs ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴡᴏʀᴅ ~~{}~~ 😕
 
-ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ ɪɴ ɢᴏᴏɢʟᴇ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ 😃
+    I_CUDNT = """<b>Sᴏʀʀʏ ʏᴏᴜʀ ᴡᴏʀᴅ ɪꜱ ɴᴏ ᴀɴʏ ᴍᴏᴠɪᴇ/sᴇʀɪᴇs ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴡᴏʀᴅ ~~{}~~ 😕
 
-ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 👇
+Mᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 👇
+➤ᴇxᴀᴍᴘʟᴇ : Bhediya or Bhediya 2022 or Avatar 2009 Hindi
+Sᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 👇
+➤ᴇxᴀᴍᴘʟᴇ : Asur S02 or Asur S01E04 or Asur S03E24
 
-ᴇxᴀᴍᴘʟᴇ : Bhediya or Bhediya 2022 or Avatar 2009 Hindi
+🚯 Dᴏɴᴛ ᴜꜱᴇ ➤ ':(!,./) ᴏʀ ᴀɴʏ sʏᴍʙᴏʟs
+ᴜsᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ ᴏʀ ɪᴍᴅʙ.</b>"""
 
-ꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 👇
+    I_CUD_NT = """𝗠𝗢𝗩𝗜𝗘 𝗡𝗢𝗧 𝗙𝗢𝗨𝗡𝗗 𝗜𝗡 𝗠𝗬 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘 {}
+𝗣𝗟𝗘𝗔𝗦𝗘 𝗖𝗛𝗘𝗖𝗞 𝗧𝗛𝗘 𝗦𝗣𝗘𝗟𝗟𝗜𝗡𝗚 𝗢𝗡 𝗚𝗢𝗢𝗚𝗟𝗘 𝗢𝗥 𝗜𝗠𝗗𝗕..."""
 
-ᴇxᴀᴍᴘʟᴇ : Asur S02 or Asur S01E04 or Asur S03E24
-
-🚯 Dᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)</b>"""
-
-    I_CUD_NT = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}.
-ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ ᴏʀ ɪᴍᴅʙ..."""
-
-    MVE_NT_FND = """ᴍᴏᴠɪᴇ ɴᴏᴛ ꜰᴏᴜɴᴅ ɪɴ ᴅᴀᴛᴀʙᴀꜱᴇ,ᴇɪᴛʜᴇʀ ɪᴛ's ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ / ɴᴏᴛ ʀᴇʟᴇᴀsᴇ / ɴᴏᴛ ᴅᴜʙʙᴇᴅ ʏᴇᴛ...ɪғ ɪᴛ's ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ᴅʀᴏᴘ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴏɴ sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ
-    𝚁𝚎𝚚𝚞𝚎𝚜𝚝 𝙵𝚘𝚛𝚖𝚊𝚝:
+    MVE_NT_FND = """<b>ᴍᴏᴠɪᴇ ɴᴏᴛ ꜰᴏᴜɴᴅ ɪɴ ᴅᴀᴛᴀʙᴀꜱᴇ,ᴇɪᴛʜᴇʀ ɪᴛ's ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ / ɴᴏᴛ ʀᴇʟᴇᴀsᴇ / ɴᴏᴛ ᴅᴜʙʙᴇᴅ ʏᴇᴛ...ɪғ ɪᴛ's ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ᴅʀᴏᴘ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴏɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ
+    
+    Rᴇǫᴜᴇsᴛ ꜰᴏʀᴍᴀᴛ: 👇
+    
     #request
-    Name- KGF Chapter 2
-    Year- 2022
-    Language-Hindi"""
+    Name- Jawan
+    Year- 2023
+    Language- Hindi</b>"""
 
-    TOP_ALRT_MSG = """Cʜᴇᴄᴋɪɴɢ Fᴏʀ Mᴏᴠɪᴇ Iɴ Dᴀᴛᴀʙᴀsᴇ..."""
+    TOP_ALRT_MSG = """⚡ 𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴 𝗙𝗼𝗿 𝗠𝗼𝘃𝗶𝗲 𝗜𝗻 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲...⚡"""
 
-    MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️</b>"""
+    MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️
+   
+ Yᴏᴜ Cᴀɴ Rᴇǫᴜᴇsᴛ Aɴʏ Mᴏᴠɪᴇs, Wᴇʙ-Sᴇʀɪᴇs, Aɴɪᴍᴇ, K-Dʀᴀᴍᴀ Hᴇʀᴇ 😇 
+ 
+ ⍟ Nᴏᴛᴇ - ʙᴇꜰᴏʀᴇ ʀᴇǫᴜᴇꜱᴛɪɴɢ ᴀ ᴍᴏᴠɪᴇ ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/Filmymod123'>Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ</a> ᴏᴛʜᴇʀᴡɪꜱᴇ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇ ɪɴ ɢʀᴏᴜᴘ
+
+🔅 Pʟᴇᴀꜱᴇ ꜰᴏʟʟᴏᴡ ʀᴇǫᴜᴇꜱᴛ ᴛɪᴘꜱ 
+❗ ʀᴇǫᴜᴇꜱᴛ ᴛɪᴘꜱ : <a href='https://telegra.ph/REQUEST-TIPS-07-02'>[ᴄʟɪᴄᴋ ʜᴇʀᴇ]</a></b>"""
 
     SHORTLINK_INFO = """
-<b>─────「<a href=https://t.me/YourDemandZone> Hᴏᴡ ᴛᴏ Eᴀʀɴ Mᴏɴᴇʏ </a> 」─────
+<b>⍟────[ <a href=https://t.me/Movies_Search2_Bot>Hᴏᴡ ᴛᴏ Eᴀʀɴ Mᴏɴᴇʏ</a> ]────⍟
 
-Yᴏᴜ ᴄᴀɴ Eᴀʀɴ Mᴏɴᴇʏ Fʀᴏᴍ Tʜɪs Bᴏᴛ Uɴᴛɪʟ ᴛʜɪs ʙᴏᴛ ɪs ᴀʟɪᴠᴇ.
+☞ sᴛᴇᴘ 𝟷 : ʏᴏᴜ ᴍᴜsᴛ ʜᴀᴠᴇ ᴀᴛʟᴇᴀsᴛ ᴏɴᴇ ɢʀᴏᴜᴘ ᴡɪᴛʜ ᴍɪɴɪᴍᴜᴍ 3𝟶𝟶 ᴍᴇᴍʙᴇʀs.
 
-Wᴀɴᴛ ᴛᴏ Kɴᴏᴡ Hᴏᴡ? Fᴏʟʟᴏᴡ Tʜᴇsᴇ Sᴛᴇᴘs:-
+☞ sᴛᴇᴘ 𝟸 : ᴍᴀᴋᴇ ᴛʜɪs <a href=https://t.me/Movies_Search2_Bot>⚡ᴍᴏᴠɪᴇꜱ ꜱᴇᴀʀᴄʜ ʙᴏᴛ⚡</a> ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.</a>.
 
-sᴛᴇᴘ 𝟷 : ʏᴏᴜ ᴍᴜsᴛ ʜᴀᴠᴇ ᴀᴛʟᴇᴀsᴛ ᴏɴᴇ ɢʀᴏᴜᴘ ᴡɪᴛʜ ᴍɪɴɪᴍᴜᴍ 1𝟶𝟶 ᴍᴇᴍʙᴇʀs.
+☞ sᴛᴇᴘ 𝟹 : ᴄʀᴇᴀᴛᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ ᴀɴʏ sʜᴏʀᴛɴᴇʀ ʟɪᴋᴇ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴜsᴇ ᴛʜɪs ʙᴇsᴛ sʜᴏʀᴛɴᴇʀ <a href="https://onepagelink.in/ref/Tousif2001">Oɴᴇᴘᴀɢᴇʟɪɴᴋ.</a>
 
-sᴛᴇᴘ 𝟸 : ᴍᴀᴋᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ Aɴʏ <a href=https://urlshortx.com/ref/Spidynaik>Sʜᴏʀᴛᴇɴᴇʀ Wᴇʙsɪᴛᴇ</a>.
+☞ sᴛᴇᴘ 4 : ᴛʜᴇɴ sᴇᴛ ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ ᴅᴇᴛᴀɪʟs ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ 👇
 
-sᴛᴇᴘ 𝟹 : ꜰᴏʟʟᴏᴡ ᴛʜᴇsᴇ <a href=https://t.me/YourDemandZone> ɪɴꜱᴛʀᴜᴄᴛɪᴏɴꜱ </a>Tᴏ ᴄᴏɴɴᴇᴄᴛ sʜᴏʀᴛᴇɴᴇʀ.
+Commands ♻️
 
-➣ Yᴏᴜ ᴄᴀɴ ᴄᴏɴɴᴇᴄᴛ ᴀs ᴍᴀɴʏ ɢʀᴏᴜᴘ ʏᴏᴜ ʜᴀᴠᴇ.
+/set_shortner - your shortner name & api
+/set_tutorial - your tutorial link
 
-Any Doubts or Not Connecting? Contact Me </b>
+Examples 📌📌
+
+👉 <code>/set_shortner onepagelink.in 24d0af2f976834471272f1b477e4cc37f82921e1</code>
+
+👉 <code>/set_tutorial https://t.me/Filmymod123</code>
+
+ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ꜱʜᴏʀᴛɴᴇʀ ᴅᴇᴛᴀɪʟs ʙʏ 
+/shortner_info ᴄᴏᴍᴍᴀɴᴅ
+
+ᴀɴʏ ᴅᴏᴜʙᴛꜱ ᴏʀ ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛɪɴɢ? 
+<a href='https://t.me/FilmymodOwner_Bot'>ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ</a> ☞ @FilmymodOwner_Bot</b>
 """
 
     REQINFO = """
@@ -223,10 +246,12 @@ Tɪᴘ: Sᴇʟᴇᴄᴛ "Lᴀɴɢᴜᴀɢᴇs" ᴏʀ "Sᴇᴀsᴏɴs" Bᴜᴛᴛ
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
     CAPTION = """
-<b><a href="https://t.me/YDMovieZone">{file_name}</a>
+ <b>💫 **<a href='https://t.me/FilmymodMovies'>{file_name}</a>
 
-➥ 𝐉𝐎𝐈𝐍 : @YourDemandZone 🔰
-•─────────★•♛•★────────•</b>""" 
+➥ ᴊᴏɪɴ : <a href='https://t.me/How_To_Download_Movies321'>ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ</a>
+
+📌 <u>ᴘʟᴇᴀsᴇ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪs ꜰɪʟᴇs ᴛᴏ ᴛʜᴇ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇ ᴀɴᴅ ᴄʟᴏsᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ</u>
+•─────────★•♛•★────────•**</b>""" 
 
     FORCE_SUB = """
 **⚠️ Pʟᴇᴀsᴇ ғᴏʟʟᴏᴡ ᴛʜɪs ʀᴜʟe ⚠️
