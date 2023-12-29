@@ -1,7 +1,7 @@
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS, MELCOW_VID, CHNL_LNK, GRP_LNK, SPRT_CHNL
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, CHNL_LNK, GRP_LNK, SPRT_CHNL
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
@@ -38,44 +38,52 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-                    InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=SPRT_CHNL),
-                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                 ],[
-                    InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/Mr_SPIDY")
+                    InlineKeyboardButton('📣 Uᴘᴅᴀᴛᴇꜱ', url=CHNL_LNK),
+                    InlineKeyboardButton('❓ Hᴇʟᴘ', url=f'https://t.me/{temp.U_NAME}?start=shortlink_info')
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
+            text=f"<b>Tʜᴀɴᴋ Yᴏᴜ Fᴏʀ Aᴅᴅɪɴɢ Mᴇ Iɴ {message.chat.title} ❣️\n➪ Dᴏɴ'ᴛ Fᴏʀɢᴇᴛ Tᴏ Mᴀᴋᴇ Mᴇ Aᴅᴍɪɴ ⚠️\n\n•────•────────•────•\n/set_shortner - Cᴜsᴛᴏᴍ Sʜᴏʀᴛᴇɴᴇʀ\n/set_tutorial - Cᴜsᴛᴏᴍ Tᴜᴛᴏʀɪᴀʟ\n/Shortner_info - Cʜᴇᴄᴋ Yᴏᴜʀ Vᴀʟᴜᴇs\n/Connect - Tᴏ Cᴏɴɴᴇᴄᴛ Yᴏᴜʀ Gʀᴏᴜᴘ\n\n/settings - ᴄʜᴀɴɢᴇ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ\n•────•────────•────•</b>",
             reply_markup=reply_markup)
     else:
-        settings = await get_settings(message.chat.id)
-        if settings["welcome"]:
-            for u in message.new_chat_members:
-                if (temp.MELCOW).get('welcome') is not None:
-                    try:
-                        await (temp.MELCOW['welcome']).delete()
-                    except:
-                        pass
-                temp.MELCOW['welcome'] = await message.reply_video(
-                                                 video=(MELCOW_VID),
-                                                 caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
-                                                 reply_markup=InlineKeyboardMarkup(
-                                                                         [[
-                                                                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=SPRT_CHNL),
-                                                                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
-                                                                        ],[
-                                                                           InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/Mr_SPIDY")
-                                                                         ]]
-                                                 ),
-                                                 parse_mode=enums.ParseMode.HTML
-                )
+        return
+        # settings = await get_settings(message.chat.id)
+        # if settings["welcome"]:
+        #     for u in message.new_chat_members:
+        #         if (temp.MELCOW).get('welcome') is not None:
+        #             try:
+        #                 await (temp.MELCOW['welcome']).delete()
+        #             except:
+        #                 pass
+        #         temp.MELCOW['welcome'] = await message.reply_photo(
+        #                                          photo=MELCOW_VID,
+        #                                          caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
+        #                                          reply_markup=InlineKeyboardMarkup(
+        #                                                                  [[
+        #                                                                    InlineKeyboardButton('📣 Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+        #                                                                 ],[
+        #                                                                    InlineKeyboardButton("♻️ Gʀᴏᴜᴘ Rᴜʟᴇꜱ", callback_data='rule_btn')
+        #                                                                  ]]
+        #                                          ),
+        #                                          parse_mode=enums.ParseMode.HTML
+        #        )
                 
-        if settings["auto_delete"]:
-            await asyncio.sleep(600)
-            await (temp.MELCOW['welcome']).delete()
+        # if settings["auto_delete"]:
+        #     await asyncio.sleep(600)
+        #     await (temp.MELCOW['welcome']).delete()
                 
-               
-
+@Client.on_callback_query(filters.regex("rule_btn"))
+async def rule_callback_handler(bot, query):
+    buttons = [
+        [InlineKeyboardButton('Cʟᴏsᴇ ⊝', callback_data='close_data')]
+    ]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    
+    await query.message.edit_text(
+        text=script.RULE_TXT,
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML
+    )              
 
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
@@ -90,7 +98,7 @@ async def leave_a_chat(bot, message):
     try:
         buttons = [[
             InlineKeyboardButton('Support Group', url=SPRT_CHNL),
-            InlineKeyboardButton('Owner', url="https://t.me/Mr_Spidy")
+            InlineKeyboardButton('Owner', url="t.me/Filmymod7")
         ],[
             InlineKeyboardButton('Use Me Here', url=f'https://t.me/{SUPPORT_CHAT}')
         ]]
@@ -161,19 +169,23 @@ async def re_enable_chat(bot, message):
     temp.BANNED_CHATS.remove(int(chat_))
     await message.reply("Chat Successfully re-enabled")
 
-
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(bot, message):
-    rju = await message.reply('Fetching stats..')
-    total_users = await db.total_users_count()
-    totl_chats = await db.total_chat_count()
-    files = await Media.count_documents()
-    size = await db.get_db_size()
-    free = 536870912 - size
-    size = get_size(size)
-    free = get_size(free)
-    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
-
+    if message.from_user and message.from_user.id in ADMINS:
+        rju = await message.reply('Fetching stats..')
+        total_users = await db.total_users_count()
+        total_chats = await db.total_chat_count()
+        files = await Media.count_documents()
+        size = await db.get_db_size()
+        free = 536870912 - size
+        size = get_size(size)
+        free = get_size(free)
+        await rju.edit(script.STATUS_TXT.format(files, total_users, total_chats, size, free))
+    else:
+        fool = await message.reply('Fetching stats..')
+        await asyncio.sleep(3)
+        await fool.delete()
+        await message.reply("😎")
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
 async def gen_invite(bot, message):
