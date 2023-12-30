@@ -277,6 +277,9 @@ async def start(client, message):
         files_ = await get_file_details(file_id)
         files = files_[0]
         g = await get_shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+        loading_message = await message.reply("⋘ 𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴 𝗩𝗲𝗿𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗦𝘁𝗮𝘁𝘂𝘀 ⋙")
+        await asyncio.sleep(0.5)
+        await loading_message.edit_text("𝗣𝗹𝗲𝗮𝘀𝗲 𝗪𝗮𝗶𝘁 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗟𝗶𝗻𝗸....")
         k = await client.send_message(chat_id=user,text=f"<b>🗂️ Fɪʟᴇ Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n⚙️ Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n⬇️ Dᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ ➠ : {g}\n\n⚠️ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀғᴛᴇʀ 𝟻 ᴍɪɴᴜᴛᴇꜱ ᴛᴏ ᴀᴠᴏɪᴅ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇꜱ.</b>", reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -287,6 +290,7 @@ async def start(client, message):
                 ]
             )
         )
+        await loading_message.delete()
         await asyncio.sleep(300)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
