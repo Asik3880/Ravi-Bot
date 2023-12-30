@@ -155,7 +155,7 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [[
-                         InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
+                         InlineKeyboardButton("🔰 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🔰", url=GRP_LNK)
                         ]]
                     )
                 )
@@ -173,7 +173,7 @@ async def start(client, message):
                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=f'https://t.me/{SUPPORT_CHAT}'),
                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
                        ],[
-                          InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
+                          InlineKeyboardButton("🔰 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🔰", url=GRP_LNK)
                          ]
                         ]
                     )
@@ -339,18 +339,18 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                      InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
+                      InlineKeyboardButton("🔰 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🔰", url=GRP_LNK)
                      ]
                     ]
                 )
             )
-            filesarr.append(msg)
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
-        await asyncio.sleep(600)
-        for x in filesarr:
-            await x.delete()
-        await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
-        return    
+   #         filesarr.append(msg)
+   #     k = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
+   #     await asyncio.sleep(600)
+   #     for x in filesarr:
+   #         await x.delete()
+   #     await k.edit_text("<b>Your All Files/Videos is successfully deleted!!!</b>")
+   #     return    
         
     elif data.startswith("files"):
         user = message.from_user.id
@@ -409,7 +409,7 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                      [
-                      InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
+                      InlineKeyboardButton("🔰 Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ 🔰", url=GRP_LNK)
                      ]
                     ]
                 )
@@ -425,14 +425,14 @@ async def start(client, message):
                 except:
                     return
             await msg.edit_caption(f_caption)
-            btn = [[
-                InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
-            ]]
-            k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
-            await asyncio.sleep(600)
-            await msg.delete()
-            await k.edit_text("<b>Your File/Video is successfully deleted!!!\n\nClick below button to get your deleted file 👇</b>",reply_markup=InlineKeyboardMarkup(btn))
-            return
+     #       btn = [[
+     #           InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
+     #       ]]
+     #       k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
+     #       await asyncio.sleep(600)
+     #       await msg.delete()
+     #       await k.edit_text("<b>Your File/Video is successfully deleted!!!\n\nClick below button to get your deleted file 👇</b>",reply_markup=InlineKeyboardMarkup(btn))
+     #       return
         except:
             pass
         return await message.reply('No such file exist.')
@@ -472,19 +472,19 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton("🔰Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ🔰", url=GRP_LNK)
+              InlineKeyboardButton("❌ ᴄʟᴏꜱᴇ ❌", callback_data=f"close_data")
              ]
             ]
         )
     )
-    btn = [[
-        InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
-    ]]
-    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
-    await asyncio.sleep(600)
-    await msg.delete()
-    await k.edit_text("<b>Your File/Video is successfully deleted!!!\n\nClick below button to get your deleted file 👇</b>",reply_markup=InlineKeyboardMarkup(btn))
-    return   
+#    btn = [[
+#        InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
+#    ]]
+#    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
+#    await asyncio.sleep(600)
+#    await msg.delete()
+#    await k.edit_text("<b>Your File/Video is successfully deleted!!!\n\nClick below button to get your deleted file 👇</b>",reply_markup=InlineKeyboardMarkup(btn))
+#    return   
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
@@ -836,18 +836,18 @@ async def requests(bot, message):
         try:
             if REQST_CHANNEL is not None:
                 btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.reply_to_message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('🔍 Gᴏ Tᴏ Tʜᴇ Mᴇꜱꜱᴀɢᴇ 🔎', url=f"{message.reply_to_message.link}"),
+                    ],[ InlineKeyboardButton('🉐 Sʜᴏᴡ Oᴘᴛɪᴏɴꜱ 🉐', callback_data=f'show_option#{reporter}')
                       ]]
-                reported_post = await bot.send_message(chat_id=REQST_CHANNEL, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
+                reported_post = await bot.send_message(chat_id=REQST_CHANNEL, text=f"<b>📫 Rᴇǫᴜᴇsᴛ Dᴇᴛᴀɪʟs :\n\n🕵️ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention} ({reporter})\n\n🔖 Mᴇssᴀɢᴇ : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                 success = True
             elif len(content) >= 3:
                 for admin in ADMINS:
                     btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.reply_to_message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('🔍 Gᴏ Tᴏ Tʜᴇ Mᴇꜱꜱᴀɢᴇ 🔎', url=f"{message.reply_to_message.link}"),
+                    ],[ InlineKeyboardButton('🉐 Sʜᴏᴡ Oᴘᴛɪᴏɴꜱ 🉐', callback_data=f'show_option#{reporter}')
                       ]]
-                    reported_post = await bot.send_message(chat_id=admin, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
+                    reported_post = await bot.send_message(chat_id=admin, text=f"<b>📫 Rᴇǫᴜᴇsᴛ Dᴇᴛᴀɪʟs :\n\n🕵️ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention} ({reporter})\n\n🔖 Mᴇssᴀɢᴇ : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                     success = True
             else:
                 if len(content) < 3:
@@ -871,18 +871,18 @@ async def requests(bot, message):
         try:
             if REQST_CHANNEL is not None and len(content) >= 3:
                 btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('🔍 Gᴏ Tᴏ Tʜᴇ Mᴇꜱꜱᴀɢᴇ 🔎', url=f"{message.link}"),
+                    ],[ InlineKeyboardButton('🉐 Sʜᴏᴡ Oᴘᴛɪᴏɴꜱ 🉐', callback_data=f'show_option#{reporter}')
                       ]]
-                reported_post = await bot.send_message(chat_id=REQST_CHANNEL, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
+                reported_post = await bot.send_message(chat_id=REQST_CHANNEL, text=f"<b>📫 Rᴇǫᴜᴇsᴛ Dᴇᴛᴀɪʟs :\n\n🕵️ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention} ({reporter})\n\n🔖 Mᴇssᴀɢᴇ : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                 success = True
             elif len(content) >= 3:
                 for admin in ADMINS:
                     btn = [[
-                        InlineKeyboardButton('View Request', url=f"{message.link}"),
-                        InlineKeyboardButton('Show Options', callback_data=f'show_option#{reporter}')
+                        InlineKeyboardButton('🔍 Gᴏ Tᴏ Tʜᴇ Mᴇꜱꜱᴀɢᴇ 🔎', url=f"{message.link}"),
+                    ],[ InlineKeyboardButton('🉐 Sʜᴏᴡ Oᴘᴛɪᴏɴꜱ 🉐', callback_data=f'show_option#{reporter}')
                       ]]
-                    reported_post = await bot.send_message(chat_id=admin, text=f"<b>𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})\n\n𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
+                    reported_post = await bot.send_message(chat_id=admin, text=f"<b>📫 Rᴇǫᴜᴇsᴛ Dᴇᴛᴀɪʟs :\n\n🕵️ Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention} ({reporter})\n\n🔖 Mᴇssᴀɢᴇ : {content}</b>", reply_markup=InlineKeyboardMarkup(btn))
                     success = True
             else:
                 if len(content) < 3:
@@ -906,10 +906,10 @@ async def requests(bot, message):
         #chat = int(chat)'''
         link = await bot.create_chat_invite_link(int(REQST_CHANNEL))
         btn = [[
-                InlineKeyboardButton('Join Channel', url=link.invite_link),
-                InlineKeyboardButton('View Request', url=f"{reported_post.link}")
+                InlineKeyboardButton('⍟ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+                InlineKeyboardButton('ᴠɪᴇᴡ ʀᴇǫᴜᴇꜱᴛ ☉', url=f"{reported_post.link}")
               ]]
-        await message.reply_text("<b>Your request has been added! Please wait for some time.\n\nJoin Channel First & View Request</b>", reply_markup=InlineKeyboardMarkup(btn))
+        await message.reply_text("<b>✅ sᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ ʜᴀꜱ ʙᴇᴇɴ ᴀᴅᴅᴇᴅ, ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ꜱᴏᴍᴇᴛɪᴍᴇ...\n\nᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ ꜰɪʀꜱᴛ & ᴠɪᴇᴡ ʀᴇǫᴜᴇꜱᴛ ✨</b>", reply_markup=InlineKeyboardMarkup(btn))
     
 @Client.on_message(filters.command("send") & filters.user(ADMINS))
 async def send_msg(bot, message):
@@ -971,7 +971,7 @@ async def shortlink(bot, message):
         return await message.reply(f"You are anonymous admin. Turn off anonymous admin and try again this command")
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
-        return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command only works on groups !\n\n<u>Follow These Steps to Connect Shortener:</u>\n\n1. Add Me in Your Group with Full Admin Rights\n\n2. After Adding in Grp, Set your Shortener\n\nSend this command in your group\n\n—> /set_shortner ""{your_shortener_website_name} {your_shortener_api}\n\n#Sample:-\n/set_shortner  urlshortx.com aacda989a636df49b60ebd363b56dd5e82095eec\n\nThat's it!!! Enjoy Earning Money 💲\n\n[[[ Trusted Earning Site - https://urlshortx.com/ref/Spidynaik ]]]\n\nIf you have any Doubts, Feel Free to Ask me - @Mr_SPIDYBot</b>")
+        return await message.reply_text(text=script.SHORTLINK_INFO)
     elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         grpid = message.chat.id
         title = message.chat.title
@@ -987,7 +987,7 @@ async def shortlink(bot, message):
     try:
         command, shortlink_url, api = data.split(" ")
     except:
-        return await message.reply_text("<b>Command Incomplete :(\n\nGive me a shortener website link and api along with the command !\n\nFormat: <code>/shortlink mplaylink.com 1f1da5c9df9a58058672ac8d8134e203b03426a1</code></b>")
+        return await message.reply_text("<b>Command Incomplete :(\n\nGive me a shortener website link and api along with the command !\n\nFormat: <code>/set_shortner onepagelink.in 24d0af2f976834471272f1b477e4cc37f82921e1</code></b>")
     reply = await message.reply_text("<b>Please Wait...</b>")
     shortlink_url = re.sub(r"https?://?", "", shortlink_url)
     shortlink_url = re.sub(r"[:/]", "", shortlink_url)
@@ -1024,7 +1024,7 @@ async def onshortlink(bot, message):
     # ENABLE_SHORTLINK = True
     return await message.reply_text("Successfully enabled shortlink")
 
-@Client.on_message(filters.command("get_info"))
+@Client.on_message(filters.command("shortner_info"))
 async def showshortlink(bot, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -1128,3 +1128,15 @@ async def stop_button(bot, message):
     await asyncio.sleep(3)
     await msg.edit("**✅️ 𝙱𝙾𝚃 𝙸𝚂 𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙴𝙳. 𝙽𝙾𝚆 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙼𝙴**")
     os.execl(sys.executable, sys.executable, *sys.argv)
+
+@Client.on_message(filters.command("donate"))
+async def DONATE_TXT_cmd_handler(client, message):                
+    btn = [            
+        [InlineKeyboardButton("Close", callback_data=f"close_data")]
+    ]
+    reply_markup = InlineKeyboardMarkup(btn)
+    await message.reply_photo(
+        photo="https://telegra.ph/file/3455a606a8219a4304319.jpg",
+        caption=script.DONATE_TXT,
+        reply_markup=reply_markup
+    )
