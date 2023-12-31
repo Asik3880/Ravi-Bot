@@ -2179,10 +2179,10 @@ async def advantage_spell_chok(client, msg):
             )
         ] for k, movie in enumerate(movielist[:5])]
         btn.append([InlineKeyboardButton(text="✘𝐂𝐋𝐎𝐒𝐄✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
-        spell_check_del = await msg.reply_text(
-            text=(script.CUDNT_FND.format(mv_rqst)),
-            reply_markup=InlineKeyboardMarkup(btn),
-            reply_to_message_id=msg.id
+        spell_check_del = await msg.reply_photo(
+            photo=(SPELL_IMG),
+            caption=(script.CUDNT_FND.format(mv_rqst)),
+            reply_markup=InlineKeyboardMarkup(btn)
         )
         try:
             if settings['auto_delete']:
@@ -2246,10 +2246,10 @@ async def advantage_spell_chok(client, msg):
             ]
             for k, movie in enumerate(movielist[:5])]  # Limit to the first 5 movies
         btn.append([InlineKeyboardButton(text="✘𝐂𝐋𝐎𝐒𝐄✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
-        spell_check_del = await msg.reply_text(
-            text=(script.CUDNT_FND.format(mv_rqst)),
-            reply_markup=InlineKeyboardMarkup(btn), 
-            reply_to_message_id=msg.id
+        spell_check_del = await msg.reply_photo(
+            photo=(SPELL_IMG),
+            caption=(script.CUDNT_FND.format(mv_rqst)),
+            reply_markup=InlineKeyboardMarkup(btn)
         )
         try:
             if settings['auto_delete']:
