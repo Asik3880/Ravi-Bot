@@ -126,24 +126,32 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
     try:
         if settings['max_btn']:
             if 0 < offset <= 10:
@@ -352,26 +360,34 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0,
+        btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
-            )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        )
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
 
     if offset != "":
         try:
@@ -534,20 +550,24 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
         
     offset = 0
 
@@ -1823,11 +1843,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('✔ Oɴ' if settings["spell_check"] else '✘ Oғғ',
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton('Wᴇʟᴄᴏᴍᴇ Msɢ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✔ Oɴ' if settings["welcome"] else '✘ Oғғ',
-                                         callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
-                ],
+         #       [
+         #           InlineKeyboardButton('Wᴇʟᴄᴏᴍᴇ Msɢ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+         #           InlineKeyboardButton('✔ Oɴ' if settings["welcome"] else '✘ Oғғ',
+         #                                callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
+         #       ],
                 [
                     InlineKeyboardButton('Aᴜᴛᴏ-Dᴇʟᴇᴛᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
@@ -1918,24 +1938,32 @@ async def auto_filter(client, msg, spoll=False):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("🔉 Lᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("📂Sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
             ]
         )
-        btn.insert(0, [
-            InlineKeyboardButton(f'☟🅂🄴🄻🄴🄲🅃☟', 'select')
-        ])
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
     if offset != "":
         req = message.from_user.id if message.from_user else 0
         try:
