@@ -2094,7 +2094,9 @@ async def auto_filter(client, msg, spoll=False):
 
 
             
-async def advantage_spell_chok(client, msg):
+
+        
+ async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
     reqstr1 = msg.from_user.id if msg.from_user else 0
@@ -2102,34 +2104,32 @@ async def advantage_spell_chok(client, msg):
     settings = await get_settings(msg.chat.id)
     find = mv_rqst.split(" ")
     query = ""
-    removes = ["in", "series", "full", "horror", "thriller", "mystery", "print", "file"]
+    removes = ["in","upload", "series", "full", "horror", "thriller", "mystery", "print", "file"]
     for x in find:
         if x in removes:
             continue
         else:
             query = query + x + " "
     query = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", query, flags=re.IGNORECASE)
-    query = re.sub(r"\s+", " ", query).strip() + ""
+    query = re.sub(r"\s+", " ", query).strip() + "movie"
     try:
         g_s = await search_gagala(query)
         g_s += await search_gagala(msg.text)
         gs_parsed = []
         if not g_s:
             reqst_gle = query.replace(" ", "+")
-            reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
-        ],[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
-        ]]  
-        )
-                if NO_RESULTS_MSG:
+            button = [
+                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠✅", url=f"https://www.google.com/search?q={reqst_gle}") ],
+                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐝𝐚𝐭𝐞📆", url=f"https://www.google.com/search?q={reqst_gle}+release+date") ]
+                    ]
+            if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_photo(
                 photo=SPELL_IMG, 
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             await k.delete()
             return
         regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -2157,20 +2157,18 @@ async def advantage_spell_chok(client, msg):
         movielist = list(dict.fromkeys(movielist))  # removing duplicates
         if not movielist:
             reqst_gle = query.replace(" ", "+")
-            reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
-        ],[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
-        ]]  
-        )    
-                if NO_RESULTS_MSG:
+            button = [
+                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠✅", url=f"https://www.google.com/search?q={reqst_gle}") ],
+                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐝𝐚𝐭𝐞📆", url=f"https://www.google.com/search?q={reqst_gle}+release+date") ]
+                    ]
+            if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_photo(
                 photo=SPELL_IMG, 
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             await k.delete()
             return
         SPELL_CHECK[mv_id] = movielist
@@ -2179,7 +2177,7 @@ async def advantage_spell_chok(client, msg):
                 text=movie.strip(),
                 callback_data=f"spolling#{reqstr1}#{k}",
             )
-        ] for k, movie in enumerate(movielist[:5])]
+        ] for k, movie in enumerate(movielist)]
         btn.append([InlineKeyboardButton(text="✘𝐂𝐋𝐎𝐒𝐄✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         spell_check_del = await msg.reply_photo(
             photo=(SPELL_IMG),
@@ -2188,7 +2186,7 @@ async def advantage_spell_chok(client, msg):
         )
         try:
             if settings['auto_delete']:
-                await asyncio.sleep(30)
+                await asyncio.sleep(60)
                 await spell_check_del.delete()
         except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
@@ -2203,39 +2201,34 @@ async def advantage_spell_chok(client, msg):
         except Exception as e:
             logger.exception(e)
             reqst_gle = mv_rqst.replace(" ", "+")
-            reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
-        ],[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
-        ]]  
-        )
-                if NO_RESULTS_MSG:
+            button = [
+                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠✅", url=f"https://www.google.com/search?q={reqst_gle}") ],
+                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐝𝐚𝐭𝐞📆", url=f"https://www.google.com/search?q={reqst_gle}+release+date") ]
+                    ]
+            if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_photo(
                 photo=SPELL_IMG, 
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             await k.delete()
             return
         movielist = []
         if not movies:
             reqst_gle = mv_rqst.replace(" ", "+")
-            reply_markup = InlineKeyboardMarkup([[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
-        ],[
-        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
-        ]]  
-        )
-                if NO_RESULTS_MSG:
+            button = [[
+                       InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+            ]]
+            if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
             k = await msg.reply_photo(
                 photo=SPELL_IMG, 
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             await k.delete()
             return
         movielist += [movie.get('title') for movie in movies]
@@ -2244,7 +2237,7 @@ async def advantage_spell_chok(client, msg):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=movie.strip(),
+                    text=movie_name.strip(),
                     callback_data=f"spol#{reqstr1}#{k}",
                 )
             ]
@@ -2265,7 +2258,7 @@ async def advantage_spell_chok(client, msg):
                 settings = await get_settings(msg.chat.id)
                 if settings['auto_delete']:
                     await asyncio.sleep(600)
-                    await spell_check_del.delete()            
+                    await spell_check_del.delete()                   
 
                 
 
