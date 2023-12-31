@@ -66,23 +66,23 @@ async def give_filter(client, message):
         if total_results == 0:
             return
         else:
-            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention} ❤️\n\n{str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ ☞ {search}.\n\n<u>Sᴇᴀʀᴄʜ Mᴏᴠɪᴇs & Sᴇʀɪᴇs Fʀᴏᴍ Hᴇʀᴇ</u> ☟</b>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📌 Rᴇǫᴜᴇsᴛ ʜᴇʀᴇ", url=f"https://t.me/FilmymodMovies")]]))
+            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - @YDMovieZone</b>")
 
-@Client.on_message(filters.private & filters.text & filters.incoming)
-async def pm_text(bot, message):
-    content = message.text
-    user = message.from_user.first_name
-    user_id = message.from_user.id
-    if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-    if user_id in ADMINS: return # ignore admins
-    await message.reply_text(
-         text=f"<b>Hᴇʏ {user} 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ\n\nYᴀʜᴀ ᴀᴀᴘ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɴʜɪ ᴋᴀʀ ꜱᴀᴋᴛᴇ ʜᴏ. ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴍᴇ ᴊᴀᴀᴋᴇ ᴍᴏᴠɪᴇ ᴏʀ ᴡᴇʙꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇsᴛ ᴋᴀʀᴏ ☟</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/FilmymodMovies")]]))
-    await bot.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"<b>👻 ⚡ᴀᴜᴛᴏ ᴍᴏᴠɪᴇꜱ ꜱᴇᴀʀᴄʜ ʙᴏᴛ⚡ 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝ᴍᴇssᴀɢᴇ:- {content}\n\n👶🏻ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:- {message.from_user.mention}\n\n🃏ᴜꜱᴇʀ ɪᴅ:- {user_id}</b>"
-    )
+# @Client.on_message(filters.private & filters.text & filters.incoming)
+# async def pm_text(bot, message):
+#     content = message.text
+#     user = message.from_user.first_name
+#     user_id = message.from_user.id
+#     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
+#     if user_id in ADMINS: return # ignore admins
+#     await message.reply_text(
+#          text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ <a href=https://telegram.me/+ps2An00KwZYwNTRl>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",   
+#          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"telegram.me/YDMovieZone")]])
+#     )
+#     await bot.send_message(
+#         chat_id=LOG_CHANNEL,
+#         text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
+#     )
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -254,10 +254,7 @@ async def advantage_spoll_choker(bot, query):
                 reqstr = await bot.get_users(reqstr1)
                 if NO_RESULTS_MSG:
                     await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
-                btn = [[
-                    InlineKeyboardButton("🔰 ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ᴛᴏ ᴀᴅᴍɪɴ 🔰", url=f"https://t.me/Filmymod_Support")
-                ]]
-                k = await query.message.edit(script.MVE_NT_FND, reply_markup=InlineKeyboardMarkup(btn))
+                k = await query.message.edit(script.MVE_NT_FND)
                 await asyncio.sleep(10)
                 await k.delete()
 
@@ -269,7 +266,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"🙋‍♂ Hᴇʏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️",
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
@@ -327,7 +324,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"🙋‍♂ Hᴇʏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️",
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
@@ -420,7 +417,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"🙋‍♂ Hᴇʏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️",
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
@@ -486,7 +483,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"🙋‍♂ Hᴇʏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️",
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
@@ -879,7 +876,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Lɪᴋᴇ Yᴏᴜʀ Sᴍᴀʀᴛɴᴇss Bᴜᴛ Dᴏɴ'ᴛ Bᴇ Oᴠᴇʀ Sᴍᴀʀᴛ, Fɪʀsᴛ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ Dᴜᴅᴇ ! 😒", show_alert=True)
+            await query.answer("I Lɪᴋᴇ Yᴏᴜʀ Sᴍᴀʀᴛɴᴇss Bᴜᴛ Dᴏɴ'ᴛ Bᴇ Oᴠᴇʀ Sᴍᴀʀᴛ, Fɪʀsᴛ Jᴏɪɴ ᴏᴜʀ Bᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ ᴍᴀʜɴ! 😒", show_alert=True)
             return
         ident, kk, file_id = query.data.split("#")
         await query.answer(url=f"https://t.me/{temp.U_NAME}?start={kk}_{file_id}")
@@ -1241,7 +1238,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.SJOIN, show_alert=True)
 
     elif query.data == "start":
-        buttons = [[
+        buttons = buttons = [[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('💸 Eᴀʀɴ Mᴏɴᴇʏ', callback_data="shortlink_info"),
@@ -1249,6 +1246,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('⚠️ Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🔰 Aʙᴏᴜᴛ', callback_data='about')
+                ],[
+                    InlineKeyboardButton('🍀 Jᴏɪɴ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟs 🍀', callback_data="chnl_info")
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1385,11 +1384,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.4)
         await query.message.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.4)
         await query.message.edit_text(
             text="●●●"
         )
@@ -1401,24 +1400,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('✉ Cᴏɴᴛᴀᴄᴛ', url='telegram.me/FilmymodOwner_Bot'),
+            InlineKeyboardButton('✉ Cᴏɴᴛᴀᴄᴛ', url='https://t.me/Mr_SPIDY'),
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/33b468b89e6a152020e52.jpg")
+            InputMediaPhoto("https://graph.org/file/72689fe7b446757d5b4e7.jpg")
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.4)
         await query.message.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.4)
         await query.message.edit_text(
             text="●●●"
         )
@@ -1666,7 +1665,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
-                InputMediaPhoto("https://telegra.ph/file/33b468b89e6a152020e52.jpg")
+                InputMediaPhoto("https://te.legra.ph/file/d530333a7df5211566f62.jpg")
             )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -1692,7 +1691,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton("🍂 Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ 🍂", url=SPRT_CHNL)
                 ],[
-                    InlineKeyboardButton("🌼 Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🌼", url='https://t.me/Filmymod123')
+                    InlineKeyboardButton("🌼 Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🌼", url='https://t.me/+3fKCp28WwtViYzEx')
                 ],[
                     InlineKeyboardButton("🥀 Mᴀɪɴ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ 🥀", url=CHNL_LNK)
                 ],[
@@ -1704,7 +1703,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
-                InputMediaPhoto("https://telegra.ph/file/33b468b89e6a152020e52.jpg")
+                InputMediaPhoto("https://graph.org/file/7d7a262a767f61855f3cf.jpg")
             )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
@@ -1742,7 +1741,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "shortlink_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/FilmymodOwner_Bot")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/Mr_SPIDYBot")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -2007,7 +2006,7 @@ async def auto_filter(client, msg, spoll=False):
             for file in files:
                 cap += f"<b>📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
 
-if imdb and imdb.get('poster'):
+    if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await m.delete()
@@ -2067,10 +2066,6 @@ if imdb and imdb.get('poster'):
             await message.delete()
 
 
-
-            
-
-        
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
@@ -2233,10 +2228,7 @@ async def advantage_spell_chok(client, msg):
                 settings = await get_settings(msg.chat.id)
                 if settings['auto_delete']:
                     await asyncio.sleep(600)
-                    await spell_check_del.delete() 
-                               
-
-                
+                    await spell_check_del.delete()
 
 
 async def manual_filters(client, message, text=False):
