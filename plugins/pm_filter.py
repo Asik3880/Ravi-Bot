@@ -879,7 +879,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Lɪᴋᴇ Yᴏᴜʀ Sᴍᴀʀᴛɴᴇss Bᴜᴛ Dᴏɴ'ᴛ Bᴇ Oᴠᴇʀ Sᴍᴀʀᴛ, Fɪʀsᴛ Jᴏɪɴ ᴏᴜʀ Bᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ ᴍᴀʜɴ! 😒", show_alert=True)
+            await query.answer("I Lɪᴋᴇ Yᴏᴜʀ Sᴍᴀʀᴛɴᴇss Bᴜᴛ Dᴏɴ'ᴛ Bᴇ Oᴠᴇʀ Sᴍᴀʀᴛ, Fɪʀsᴛ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ Dᴜᴅᴇ ! 😒", show_alert=True)
             return
         ident, kk, file_id = query.data.split("#")
         await query.answer(url=f"https://t.me/{temp.U_NAME}?start={kk}_{file_id}")
@@ -1385,11 +1385,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.2)
         await query.message.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.2)
         await query.message.edit_text(
             text="●●●"
         )
@@ -1414,11 +1414,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.2)
         await query.message.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.2)
         await query.message.edit_text(
             text="●●●"
         )
@@ -2032,52 +2032,52 @@ async def auto_filter(client, msg, spoll=False):
             for file in files:
                 cap += f"<b>📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
 
-    if imdb and imdb.get('poster'):
-        try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await m.delete()
-            try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    await hehe.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(300)
-                await hehe.delete()
-                await message.delete()
-        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
-            pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg") 
-            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await m.delete()
-            try:
-               if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    m=await message.reply_text("🔎")
-                    await hmm.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(300)
-                await hmm.delete()
-                await message.delete()
-        except Exception as e:
-            logger.exception(e)
-            m=await message.reply_text("🔎") 
-            fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await m.delete()
-            try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(300)
-                    await fek.delete()
-                    await message.delete()
-            except KeyError:
-                await save_group_settings(message.chat.id, 'auto_delete', True)
-                await asyncio.sleep(300)
-                await fek.delete()
-                await message.delete()
-    else:
+#    if imdb and imdb.get('poster'):
+#        try:
+#            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+#            await m.delete()
+#            try:
+#                if settings['auto_delete']:
+#                    await asyncio.sleep(300)
+#                    await hehe.delete()
+#                    await message.delete()
+#            except KeyError:
+#                await save_group_settings(message.chat.id, 'auto_delete', True)
+#                await asyncio.sleep(300)
+#                await hehe.delete()
+#                await message.delete()
+#        except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
+#            pic = imdb.get('poster')
+#            poster = pic.replace('.jpg', "._V1_UX360.jpg") 
+#            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+#            await m.delete()
+#            try:
+#               if settings['auto_delete']:
+#                    await asyncio.sleep(300)
+#                    m=await message.reply_text("🔎")
+#                    await hmm.delete()
+#                    await message.delete()
+#            except KeyError:
+#                await save_group_settings(message.chat.id, 'auto_delete', True)
+#                await asyncio.sleep(300)
+#                await hmm.delete()
+#                await message.delete()
+#        except Exception as e:
+#            logger.exception(e)
+#            m=await message.reply_text("🔎") 
+#            fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
+#            await m.delete()
+#            try:
+#                if settings['auto_delete']:
+#                    await asyncio.sleep(300)
+#                    await fek.delete()
+#                    await message.delete()
+#            except KeyError:
+#                await save_group_settings(message.chat.id, 'auto_delete', True)
+#                await asyncio.sleep(300)
+#                await fek.delete()
+#                await message.delete()
+#    else:
         fuk = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
         await m.delete()
         try:
@@ -2114,18 +2114,19 @@ async def advantage_spell_chok(client, msg):
         gs_parsed = []
         if not g_s:
             reqst_gle = query.replace(" ", "+")
-            button = [
-                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠✅", url=f"https://www.google.com/search?q={reqst_gle}") ],
-                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐝𝐚𝐭𝐞📆", url=f"https://www.google.com/search?q={reqst_gle}+release+date") ]
-                    ]
+            reply_markup = InlineKeyboardMarkup([[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
+        ],[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
+        ]]  
+        )
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            k = await msg.reply_photo(
-                photo=SPELL_IMG, 
-                caption=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
+            k = await msg.reply_text(
+                text=script.I_CUDNT.format(mv_rqst),
+                reply_markup=reply_markup
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(15)
             await k.delete()
             return
         regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -2153,18 +2154,19 @@ async def advantage_spell_chok(client, msg):
         movielist = list(dict.fromkeys(movielist))  # removing duplicates
         if not movielist:
             reqst_gle = query.replace(" ", "+")
-            button = [
-                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠✅", url=f"https://www.google.com/search?q={reqst_gle}") ],
-                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐝𝐚𝐭𝐞📆", url=f"https://www.google.com/search?q={reqst_gle}+release+date") ]
-                    ]
+            reply_markup = InlineKeyboardMarkup([[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
+        ],[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
+        ]]  
+        )    
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            k = await msg.reply_photo(
-                photo=SPELL_IMG, 
-                caption=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
+            k = await msg.reply_text(
+                text=script.I_CUDNT.format(mv_rqst),
+                reply_markup=reply_markup
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(15)
             await k.delete()
             return
         SPELL_CHECK[mv_id] = movielist
@@ -2197,34 +2199,37 @@ async def advantage_spell_chok(client, msg):
         except Exception as e:
             logger.exception(e)
             reqst_gle = mv_rqst.replace(" ", "+")
-            button = [
-                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠✅", url=f"https://www.google.com/search?q={reqst_gle}") ],
-                        [ InlineKeyboardButton("🔍 𝐂𝐥𝐢𝐜𝐤 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐝𝐚𝐭𝐞📆", url=f"https://www.google.com/search?q={reqst_gle}+release+date") ]
-                    ]
+            reply_markup = InlineKeyboardMarkup([[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
+        ],[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
+        ]]  
+        )
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            k = await msg.reply_photo(
-                photo=SPELL_IMG, 
-                caption=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
+            k = await msg.reply_text(
+                text=script.I_CUDNT.format(mv_rqst),
+                reply_markup=reply_markup
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(15)
             await k.delete()
             return
         movielist = []
         if not movies:
             reqst_gle = mv_rqst.replace(" ", "+")
-            button = [[
-                       InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
-            ]]
+            reply_markup = InlineKeyboardMarkup([[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ꜱᴘᴇʟʟɪɴɢ ✅", url=f"https://www.google.com/search?q={reqst_gle}+movie")
+        ],[
+        InlineKeyboardButton("🔍 ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴇᴄᴋ ʀᴇʟᴇᴀꜱᴇ ᴅᴀᴛᴇ 📅", url=f"https://www.google.com/search?q={reqst_gle}+movie+release+date")
+        ]]  
+        )
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            k = await msg.reply_photo(
-                photo=SPELL_IMG, 
-                caption=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
+            k = await msg.reply_text(
+                text=script.I_CUDNT.format(mv_rqst),
+                reply_markup=reply_markup
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(15)
             await k.delete()
             return
         movielist += [movie.get('title') for movie in movies]
