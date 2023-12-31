@@ -38,7 +38,7 @@ async def save_file(media):
 
     # TODO: Find better way to get same file_id for same media to avoid duplicates
     file_id, file_ref = unpack_new_file_id(media.file_id)
-    file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
+    file_name = re.sub(r"(www\S+|_|\.|CineVood|Vegamovies|BollyFlix|FilmyCab|FilmyZilla|MoviesMod|Mkvcinemas|\[@FilmOne_Movies]|\[@UnratedHD]|SkymoviesHD|Movies|\)|\()", " ", str(media.file_name))
     try:
         file = Media(
             file_id=file_id,
@@ -93,13 +93,13 @@ async def get_search_results(chat_id, query, file_type=None, max_results=10, off
     elif ' ' not in query:
         raw_pattern = r'(\b|[\.\+\-_])' + query + r'(\b|[\.\+\-_])'
     else:
-        raw_pattern = query.replace(' ', r'.*[\s\.\+\-_]')
+        raw_pattern = query.replace(' ', r'.*[\s\.\+\-_\(\)\[\]]')
     
     try:
         regex = re.compile(raw_pattern, flags=re.IGNORECASE)
     except:
-        return []
-
+        return [], ''
+    
     if USE_CAPTION_FILTER:
         filter = {'$or': [{'file_name': regex}, {'caption': regex}]}
     else:
