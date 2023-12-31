@@ -706,16 +706,16 @@ async def settings(client, message):
                     callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
                 ),
             ],
-            [
-                InlineKeyboardButton(
-                    'Wᴇʟᴄᴏᴍᴇ Msɢ',
-                    callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '✔ Oɴ' if settings["welcome"] else '✘ Oғғ',
-                    callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
-                ),
-            ],
+       #     [
+       #         InlineKeyboardButton(
+       #             'Wᴇʟᴄᴏᴍᴇ Msɢ',
+       #             callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
+       #         ),
+       #         InlineKeyboardButton(
+       #             '✔ Oɴ' if settings["welcome"] else '✘ Oғғ',
+       #             callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
+       #         ),
+       #     ],
             [
                 InlineKeyboardButton(
                     'Aᴜᴛᴏ-Dᴇʟᴇᴛᴇ',
