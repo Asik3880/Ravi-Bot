@@ -20,6 +20,7 @@
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
+            "value": "6866725208:AAHm0gS94UbtMBo7Lt7Kr3ISDYggvtGqP44",
             "required": true
         },
         "API_ID": {
@@ -34,6 +35,7 @@
         },
         "CHANNELS": {
             "description": "Username or ID of channel or group. Separate multiple IDs by space.",
+            "value": "-1001824976628",
             "required": false
         },
         "ADMINS": {
@@ -43,7 +45,7 @@
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
-            "value": "https://telegra.ph/file/b9aa484df70aaf6cdf84c.jpg",
+            "value": "https://telegra.ph/file/e73a2783654545aaaf70b.jpg https://telegra.ph/file/65814a178743390367432.jpg https://telegra.ph/file/f3b943eb0a4f8a8458270.jpg",
             "required": false
         },
         "LOG_CHANNEL": {
@@ -62,6 +64,7 @@
         },
         "DATABASE_URI": {
             "description": "mongoDB URI. Get this value from https://www.mongodb.com. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
+            "value": "mongodb+srv://Rasida2001:Rasida2001@cluster0.5zt3fzm.mongodb.net/?retryWrites=true&w=majority",
             "required": true
         },
         "DATABASE_NAME": {
