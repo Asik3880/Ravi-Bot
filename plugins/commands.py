@@ -235,15 +235,16 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
+            btn = [
+            [InlineKeyboardButton("🔰 Bᴜʏ Pʀᴇᴍɪᴜᴍ 🔰", callback_data="buy")]
+            ]
             await message.reply_photo(
                 photo = VRFIED_IMG,
                 caption = script.VERIFED_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
                 # protect_content=True
+                reply_markup = InlineKeyboardMarkup(btn),
             )
-            btn = [
-            [InlineKeyboardButton("🔰 Bᴜʏ Pʀᴇᴍɪᴜᴍ 🔰", callback_data="buy")]
-        ]
-        reply_markup = InlineKeyboardMarkup(btn)
+        
             await verify_user(client, userid, token)
         else:
             return await message.reply_text(
