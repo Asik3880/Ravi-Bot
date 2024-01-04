@@ -50,7 +50,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', '')
 
 # Others
-VERIFY = bool(environ.get('VERIFY', False))
+VERIFY = bool(environ.get('VERIFY', True))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'ziplinker.net')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'f08c19f1a8bf04a82aabf0212dfe7fb01fe50420')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
