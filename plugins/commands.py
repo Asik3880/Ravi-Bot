@@ -240,6 +240,10 @@ async def start(client, message):
                 caption = script.VERIFED_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
                 # protect_content=True
             )
+            btn = [
+            [InlineKeyboardButton("🔰 Bᴜʏ Pʀᴇᴍɪᴜᴍ 🔰", callback_data="buy")]
+        ]
+        reply_markup = InlineKeyboardMarkup(btn)
             await verify_user(client, userid, token)
         else:
             return await message.reply_text(
