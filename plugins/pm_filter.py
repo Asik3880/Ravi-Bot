@@ -595,7 +595,156 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             pass
     await query.answer()
 
-                
+@Client.on_callback_query(filters.regex(r"^qualities#"))
+async def qualities_cb_handler(client: Client, query: CallbackQuery):
+    try:
+        if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
+            return await query.answer(
+                f"🙋‍♂ Hᴇʏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️",
+                show_alert=True,
+            )
+    except:
+        pass
+    
+    _, key = query.data.split("#")
+    search = FRESH.get(key)
+    search = search.replace(' ', '_')
+    
+    btn = []
+    for i in range(0, len(QUALITY)-1, 2):
+        btn.append([
+            InlineKeyboardButton(
+                text=QUALITY[i].upper(),
+                callback_data=f"fq#{QUALITY[i].lower()}#{key}"
+            ),
+            InlineKeyboardButton(
+                text=QUALITY[i+1].upper(),
+                callback_data=f"fq#{QUALITY[i+1].lower()}#{key}"
+            ),
+        ])
+
+    btn.insert(
+        0,
+        [
+            InlineKeyboardButton(
+                text="👇 sᴇʟᴇᴄᴛ ʏᴏᴜʀ ǫᴜᴀʟɪᴛɪᴇs 👇", callback_data="ident"
+            )
+        ],
+    )
+    req = query.from_user.id
+    offset = 0
+    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"fq#homepage#{key}")])
+
+    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
+
+
+@Client.on_callback_query(filters.regex(r"^fq#"))
+async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
+    _, quality, key = query.data.split("#")
+    curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+    search = FRESH.get(key)
+    search = search.replace("_", " ")
+    baal = quality in search
+    if baal:
+        search = search.replace(quality, "")
+    else:
+        search = search
+    
+    req = query.from_user.id
+    chat_id = query.message.chat.id
+    message = query.message
+    try:
+        if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
+            return await query.answer(
+                f"🙋‍♂ Hᴇʏ {query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ,\nʀᴇǫᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...‼️",
+                show_alert=True,
+            )
+    except:
+        pass
+    
+    if quality != "homepage":
+        search = f"{search} {quality}" 
+    BUTTONS[key] = search
+    cap = CAP.get(key)
+    files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
+    if not files:
+        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
+        return
+    temp.GETALL[key] = files
+    settings = await get_settings(message.chat.id)
+    text_link = "\n\n"
+    pre = 'filep' if settings['file_secure'] else 'file'
+    if settings["button"]:
+        btn = []
+        for file in files:
+            btn.append([
+                InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", url=f'https://telegram.dog/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}')
+            ])
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
+            ]
+        )
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
+    else:
+        btn = []
+        for file in files: 
+            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
+             
+        btn.insert(0, 
+            [
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("ǫᴜᴀʟɪᴛɪᴇꜱ", callback_data=f"qualities#{key}")
+            ]
+        )
+        # btn.insert(0, [
+        #     InlineKeyboardButton(f'☟𝐒𝐄𝐋𝐄𝐂𝐓☟', 'select')
+        # ])
+        btn.insert(0,
+        [InlineKeyboardButton("❍ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ❍", url=HOW_TO_VERIFY)]
+        )
+
+    if offset != "":
+        try:
+            if settings['max_btn']:
+                btn.append(
+                    [InlineKeyboardButton("📚𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ⏭",callback_data=f"next_{req}_{key}_{offset}")]
+                )
+    
+            else:
+                btn.append(
+                    [InlineKeyboardButton("📚𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ⏭",callback_data=f"next_{req}_{key}_{offset}")]
+                )
+        except KeyError:
+            await save_group_settings(query.message.chat.id, 'max_btn', True)
+            btn.append(
+                [InlineKeyboardButton("📚𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ⏭",callback_data=f"next_{req}_{key}_{offset}")]
+            )
+    else:
+        btn.append(
+            [InlineKeyboardButton(text="𝐍𝐎 𝐌𝐎𝐑𝐄 𝐏𝐀𝐆𝐄𝐒 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄 📕",callback_data="pages")]
+        )
+    
+    if not settings["button"]:
+        await query.message.edit_text(cap + text_link, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
+        return        
+    try:
+        await query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+    except MessageNotModified:
+        pass
+    await query.answer()                
+
+
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     try:
