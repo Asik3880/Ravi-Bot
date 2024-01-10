@@ -238,7 +238,7 @@ async def start(client, message):
         grpid = temp.SHORT.get(user_id) 
         f_id = temp.F_ID.get(user_id)     
             btn = [
-            [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=f'delfile#{file_id}')]
+            [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=file_{int(grpid)}_{f_id}')]
             ]
             await message.reply_photo(
                 photo = VRFIED_IMG,
