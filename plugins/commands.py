@@ -236,7 +236,7 @@ async def start(client, message):
         is_valid = await check_token(client, userid, token)
         if is_valid == True:     
             btn = [
-            [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=f'delfile#{f_id}')]
+            [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=f'delfile#{file_id}')]
             ]
             await message.reply_photo(
                 photo = VRFIED_IMG,
