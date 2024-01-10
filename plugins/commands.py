@@ -235,6 +235,8 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
+        grpid = temp.SHORT.get(user_id) 
+        f_id = temp.F_ID.get(user_id)     
             btn = [
             [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=f'delfile#{file_id}')]
             ]
@@ -389,6 +391,10 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
+            temp.F_ID[message.from_user.id] = file_id 
+    except: 
+        file_id = data
+        pre = ""
             if not await check_verification(client, message.from_user.id) and VERIFY == True and user not in PREMIUM_USER:
                 loading_message = await message.reply("⋘ 𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴 𝗩𝗲𝗿𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗦𝘁𝗮𝘁𝘂𝘀 ⋙")
                 await asyncio.sleep(0.5)
@@ -444,6 +450,11 @@ async def start(client, message):
         except:
             pass
         return await message.reply('No such file exist.')
+    except: 
+        f_id = temp.F_ID.get(message.from_user.id) 
+        files_ = await get_file_details(f_id) 
+        if not files_: 
+                return await message.reply('No such file exist.')
     files = files_[0]
     title = ' ' + ' '.join(filter(lambda x: not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
