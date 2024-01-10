@@ -235,7 +235,6 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
-        grpid = temp.SHORT.get(user_id) 
         f_id = temp.F_ID.get(user_id)     
             btn = [
             [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=f'delfile#{f_id}')]
