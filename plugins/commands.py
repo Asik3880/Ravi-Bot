@@ -234,8 +234,7 @@ async def start(client, message):
                 protect_content=True
             )
         is_valid = await check_token(client, userid, token)
-        if is_valid == True:
-        f_id = temp.F_ID.get(user_id)     
+        if is_valid == True:     
             btn = [
             [InlineKeyboardButton("📂 𝐂ʟɪᴄᴋ Hᴇʀᴇ 𝐓ᴏ 𝐆ᴇᴛ 𝐅ɪʟᴇ 📂", callback_data=f'delfile#{f_id}')]
             ]
