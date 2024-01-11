@@ -130,7 +130,7 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -145,7 +145,7 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -366,7 +366,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -381,7 +381,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -561,7 +561,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -686,7 +686,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -704,7 +704,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -1913,7 +1913,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "shortlink_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
-                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/Mr_SPIDYBot")
+                    InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/Filmymod7")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -2092,7 +2092,7 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
@@ -2107,7 +2107,7 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
+                InlineKeyboardButton("ʀᴜʟᴇꜱ", callback_data=f"rules")
             ]
         )
         # btn.insert(0, [
