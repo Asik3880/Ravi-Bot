@@ -1196,6 +1196,6 @@ async def OWNER_cmd_handler(client, message):
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
         photo="https://telegra.ph/file/cb454be74c8d762d3a645.jpg",
-        caption=script.OWNER_TXT,
+        caption=script.OWNER_INFO,
         reply_markup=reply_markup
     )
