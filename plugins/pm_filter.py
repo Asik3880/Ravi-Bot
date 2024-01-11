@@ -130,7 +130,7 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -145,7 +145,7 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -366,7 +366,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -381,7 +381,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -561,7 +561,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -686,7 +686,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -704,7 +704,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -2092,7 +2092,7 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
@@ -2107,7 +2107,7 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇꜱ", callback_data=f"languages#{key}"),
                 InlineKeyboardButton("ꜱᴇᴀꜱᴏɴꜱ", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'search')
+                InlineKeyboardButton(f'ʀᴜʟᴇꜱ', 'rules')
             ]
         )
         # btn.insert(0, [
