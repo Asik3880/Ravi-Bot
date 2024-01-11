@@ -1148,3 +1148,42 @@ async def DONATE_TXT_cmd_handler(client, message):
         caption=script.DONATE_TXT,
         reply_markup=reply_markup
     )
+
+@Client.on_message(filters.command("grp_warn") & filters.user(ADMINS))
+async def grp_warn_cmd_handler(client, message):
+    try:
+        if len(message.command) == 2:
+            grp_id = int(message.command[1])  # Convert the grp_id to integer
+            grp_data = {"id": grp_id}  # Using "id" instead of "grp_id"
+            notice_message = (
+                "**⚠️ NOTICE ⚠️\n\n"
+                "ʏᴏᴜ ᴍᴜꜱᴛ ʜᴀᴠᴇ ᴍᴏʀᴇ ᴛʜᴀɴ 𝟷𝟶𝟶 ᴍᴇᴍʙᴇʀꜱ ᴛᴏ ᴜꜱᴇ ᴍᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ. "
+                "ʏᴏᴜ ᴄᴀɴɴᴏᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘꜱ ʜᴀᴠɪɴɢ ʙᴇʟᴏᴡ 𝟷𝟶𝟶 ᴍᴇᴍʙᴇʀꜱ. "
+                "ᴍᴇᴀɴᴡʜɪʟᴇ, ʏᴏᴜ ᴄᴀɴ ꜱᴇɴᴅ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ɪɴ ᴍʏ ᴘʀɪᴠᴀᴛᴇ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇꜱ.\n\n"
+                "Bʏᴇ 👋\n"
+                "Rᴇɢᴀʀᴅꜱ ~ @Filmymod123**"
+            )
+            await client.send_message(
+                chat_id=grp_id,
+                text=notice_message,
+            )
+            await message.reply_text("ᴡᴀʀɴ ᴍsɢ sᴜᴄᴄᴇssғᴜʟʟʏ sᴇɴᴛ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ.")
+        else:
+            await message.reply_text("**Invalid format. Usage: /grp_warn grp_id**")
+    except ValueError as e:
+        error_message = f"Hey Admin, Error: {e}. Please provide a valid group ID."
+        for admin_id in ADMINS:
+            await client.send_message(chat_id=admin_id, text=error_message)
+        await message.reply_text("**Invalid format. Usage: /grp_warn grp_id**")
+
+@Client.on_message(filters.command("rules"))
+async def rule_cmd_handler(client, message):                
+    btn = [            
+        [InlineKeyboardButton("📣 Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ", url=CHNL_LNK)]
+    ]
+    reply_markup = InlineKeyboardMarkup(btn)
+    await message.reply_photo(
+        photo="https://graph.org/file/a80a0267a46808ab49974.jpg",
+        caption=script.RULE_TXT,
+        reply_markup=reply_markup
+    )
