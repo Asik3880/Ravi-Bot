@@ -1140,7 +1140,7 @@ async def stop_button(bot, message):
 @Client.on_message(filters.command("donate"))
 async def DONATE_TXT_cmd_handler(client, message):                
     btn = [            
-        [InlineKeyboardButton("Close", callback_data=f"close_data")]
+        [InlineKeyboardButton("💢 Close 💢", callback_data=f"close_data")]
     ]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
@@ -1179,11 +1179,23 @@ async def grp_warn_cmd_handler(client, message):
 @Client.on_message(filters.command("rules"))
 async def rule_cmd_handler(client, message):                
     btn = [            
-        [InlineKeyboardButton("📣 Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ", url=CHNL_LNK)]
+        [InlineKeyboardButton("💢 Close 💢", callback_data=f"close_data")]
     ]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
         photo="https://graph.org/file/a80a0267a46808ab49974.jpg",
         caption=script.RULE_TXT,
+        reply_markup=reply_markup
+    )
+
+@Client.on_message(filters.command("owner"))
+async def OWNER_INFO_cmd_handler(client, message):                
+    btn = [            
+        [InlineKeyboardButton("💢 Close 💢", callback_data=f"close_data")]
+    ]
+    reply_markup = InlineKeyboardMarkup(btn)
+    await message.reply_photo(
+        photo="https://telegra.ph/file/cb454be74c8d762d3a645.jpg",
+        caption=script.OWNER_INFO,
         reply_markup=reply_markup
     )
