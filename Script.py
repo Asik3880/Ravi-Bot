@@ -309,7 +309,7 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 <b>⍟────[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]────⍟
  
 🔹 ᴛɢ ɴᴀᴍᴇ : ꜰɪʟᴍʏᴍᴏᴅ
-🔹 ᴜꜱᴇʀɴᴀᴍᴇ: @FilmymodOwner_Bot
+🔹 ᴜꜱᴇʀɴᴀᴍᴇ: <a href='@FilmymodOwner_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 🔹 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/FilmymodOwner_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 🔹 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/Filmymod123'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 🔹 ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ : <a href='https://t.me/FilmymodMovies'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
