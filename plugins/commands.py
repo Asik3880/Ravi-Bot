@@ -1189,13 +1189,13 @@ async def rule_cmd_handler(client, message):
     )
 
 @Client.on_message(filters.command("owner"))
-async def OWNER_INFO_cmd_handler(client, message):                
+async def OWNER_cmd_handler(client, message):                
     btn = [            
         [InlineKeyboardButton("💢 Close 💢", callback_data=f"close_data")]
     ]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
         photo="https://telegra.ph/file/cb454be74c8d762d3a645.jpg",
-        caption=script.OWNER_INFO,
+        caption=script.OWNER_TXT,
         reply_markup=reply_markup
     )
