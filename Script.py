@@ -299,11 +299,16 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 • /plink - <code>Jᴜsᴛ ʟɪᴋᴇ /link, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴ.</code>"""
 
     OWNER_INFO = """
-<b>⍟────[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]────⍟   
- ◈ ᴛɢ ɴᴀᴍᴇ : 𝗙𝗶𝗹𝗺𝘆𝗺𝗼𝗱
+<b>Hey {message.from_user.mention}. Welcome ❤️
+
+ ⍟────[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]────⍟   
+ 
+ ◈ ᴛɢ ɴᴀᴍᴇ : Fɪʟᴍʏᴍᴏᴅ
  ◈ ᴜꜱᴇʀɴᴀᴍᴇ : @FilmymodOwner_Bot
- ◈ ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/FilmymodOwner_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>
-‿︵‿︵‿︵‿୨❤୧‿︵‿︵‿︵"""
+ ◈ ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/FilmymodOwner_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+ ◈ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/Filmymod123'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+ ◈ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ : <a href='https://t.me/FilmymodMovies'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+ •─────••────••────•</b>"""
 
     DISL_TXT = """
 <b>ᴛʜɪꜱ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
