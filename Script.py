@@ -298,15 +298,16 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 • /pbatch - <code>Jᴜsᴛ ʟɪᴋᴇ /batch, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴs.</code>
 • /plink - <code>Jᴜsᴛ ʟɪᴋᴇ /link, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴ.</code>"""
 
-    OWNER_TXT = """
-<b>Hey {} {} Welcome ❤️  
+    OWNER_INFO = """
+<b>⍟────[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]────⍟
  
 🔹 ᴛɢ ɴᴀᴍᴇ : ꜰɪʟᴍʏᴍᴏᴅ
 🔹 ᴜꜱᴇʀɴᴀᴍᴇ: @FilmymodOwner_Bot
 🔹 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/FilmymodOwner_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 🔹 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/Filmymod123'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 🔹 ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ : <a href='https://t.me/FilmymodMovies'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
- </b>"""
+ 
+ •❅─────✧❅✦❅✧─────❅•<b>"""
 
     DISL_TXT = """
 <b>ᴛʜɪꜱ ɪꜱ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ.
