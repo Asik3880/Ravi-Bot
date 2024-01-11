@@ -111,6 +111,7 @@ async def next_page(bot, query):
 
     if not files:
         return
+    chat_id = query.message.chat.id
     temp.GETALL[key] = files
     temp.SHORT[query.from_user.id] = query.message.chat.id
     settings = await get_settings(query.message.chat.id)
