@@ -299,7 +299,7 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 • /plink - <code>Jᴜsᴛ ʟɪᴋᴇ /link, ʙᴜᴛ ᴛʜᴇ ғɪʟᴇ ᴡɪʟʟ ʙᴇ sᴇɴᴅ ᴡɪᴛʜ ғᴏʀᴡᴀʀᴅ ʀᴇsᴛʀɪᴄᴛɪᴏɴ.</code>"""
 
     OWNER_TXT = """
-<b>Hey {} {}. Welcome ❤️  
+<b>Hey {} {} Welcome ❤️  
  
 🔹 ᴛɢ ɴᴀᴍᴇ : ꜰɪʟᴍʏᴍᴏᴅ
 🔹 ᴜꜱᴇʀɴᴀᴍᴇ: @FilmymodOwner_Bot
