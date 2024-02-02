@@ -144,7 +144,7 @@ async def next_page(bot, query):
     else:
         btn = []
         for file in files: 
-            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
+            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
              
         btn.insert(0,  
             [
@@ -378,7 +378,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     else:
         btn = []
         for file in files: 
-            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
+            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
       
         btn.insert(0,  
             [
@@ -556,7 +556,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     else:
         btn = []
         for file in files: 
-            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
+            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
      
         btn.insert(0,  
             [
@@ -693,7 +693,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
     else:
         btn = []
         for file in files: 
-            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
+            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
              
         btn.insert(0, 
             [
@@ -2100,7 +2100,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         btn = []
         for file in files: 
-            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=short_{chat_id}_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
+            text_link += f"<b>📂 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"         
              
         btn.insert(0, 
             [
