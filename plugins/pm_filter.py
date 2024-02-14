@@ -68,7 +68,7 @@ async def give_filter(client, message):
             return
         else:
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention} ❤️\n\n{str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ ☞ {search}.\n\n<u>Sᴇᴀʀᴄʜ Mᴏᴠɪᴇs & Sᴇʀɪᴇs Fʀᴏᴍ Hᴇʀᴇ</u> ☟</b>",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📌 Rᴇǫᴜᴇsᴛ ʜᴇʀᴇ", url=f"https://t.me/FilmymodMovies")]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📌 Rᴇǫᴜᴇsᴛ ʜᴇʀᴇ", url=f"https://t.me/FilmymodMovies3")]]))
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
@@ -79,7 +79,7 @@ async def pm_text(bot, message):
     if user_id in ADMINS: return # ignore admins
     await message.reply_text(
          text=f"<b>Hᴇʏ {user} 😍 ,\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ\n\nYᴀʜᴀ ᴀᴀᴘ ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɴʜɪ ᴋᴀʀ ꜱᴀᴋᴛᴇ ʜᴏ. ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴍᴇ ᴊᴀᴀᴋᴇ ᴍᴏᴠɪᴇ ᴏʀ ᴡᴇʙꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇsᴛ ᴋᴀʀᴏ ☟</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/FilmymodMovies")]]))
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/FilmymodMovies3")]]))
     await bot.send_message(
         chat_id=LOG_CHANNEL,
         text=f"<b>👻 ⚡ᴀᴜᴛᴏ ᴍᴏᴠɪᴇꜱ ꜱᴇᴀʀᴄʜ ʙᴏᴛ⚡ 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝ᴍᴇssᴀɢᴇ:- {content}\n\n👶🏻ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:- {message.from_user.mention}\n\n🃏ᴜꜱᴇʀ ɪᴅ:- {user_id}</b>"
