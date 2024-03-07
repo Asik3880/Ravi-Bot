@@ -306,11 +306,11 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
     OWNER_INFO = """
 <b>⍟────[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]────⍟
  
-🔹 ᴛᴇʟᴇɢʀᴀᴍ ɴᴀᴍᴇ: ꜰɪʟᴍʏᴍᴏᴅ
-🔹 ᴜꜱᴇʀɴᴀᴍᴇ : @Filmymod7
-🔹 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/FilmymodOwner_Bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
-🔹 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/Filmymod123'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
-🔹 ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ : <a href='https://t.me/FilmymodMovies'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+🔹 ᴛᴇʟᴇɢʀᴀᴍ ɴᴀᴍᴇ: King_Vibro
+🔹 ᴜꜱᴇʀɴᴀᴍᴇ : @King_Vibro
+🔹 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/King_Vibro'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+🔹 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/Movies_King_Update'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+🔹 ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ : <a href='https://t.me/+ipp-HIbjDIo4ZTll'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
  
 •❅─────✧❅✦❅✧─────❅•</b>"""
 
