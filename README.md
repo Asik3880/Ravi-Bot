@@ -111,7 +111,7 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/Asik3880/FM-BOT">
+<a href="https://heroku.com/deploy?template=https://github.com/Asik3880/Ravi-Bot">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy To Heroku">
 </a>
 </p>
