@@ -691,16 +691,16 @@ async def settings(client, message):
                     callback_data=f'setgs#file_secure#{settings["file_secure"]}#{grp_id}',
                 ),
             ],
-            [
-                InlineKeyboardButton(
-                    'Iᴍᴅʙ',
-                    callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '✔ Oɴ' if settings["imdb"] else '✘ Oғғ',
-                    callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}',
-                ),
-            ],
+      #      [
+      #          InlineKeyboardButton(
+      #              'Iᴍᴅʙ',
+      #              callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}',
+      #          ),
+      #          InlineKeyboardButton(
+      #              '✔ Oɴ' if settings["imdb"] else '✘ Oғғ',
+      #              callback_data=f'setgs#imdb#{settings["imdb"]}#{grp_id}',
+      #          ),
+      #      ],
             [
                 InlineKeyboardButton(
                     'Sᴘᴇʟʟ Cʜᴇᴄᴋ',
