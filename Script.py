@@ -306,7 +306,7 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
     OWNER_INFO = """
 <b>⍟────[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]────⍟
  
-🔹 ᴛᴇʟᴇɢʀᴀᴍ ɴᴀᴍᴇ: King_Vibro
+🔹 ᴛᴇʟᴇɢʀᴀᴍ ɴᴀᴍᴇ: V K
 🔹 ᴜꜱᴇʀɴᴀᴍᴇ : @King_Vibro
 🔹 ᴘᴇʀᴍᴀɴᴇɴᴛ ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/King_Vibro'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 🔹 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/Movies_King_Update'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
