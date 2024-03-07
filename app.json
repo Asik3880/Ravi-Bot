@@ -20,6 +20,7 @@
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
+            "value": "6862444715:AAFENPQIvUj4w2qmmt5LDUEgd3rvVZVcV3M",
             "required": true
         },
         "API_ID": {
@@ -34,11 +35,12 @@
         },
         "CHANNELS": {
             "description": "Username or ID of channel or group. Separate multiple IDs by space.",
+            "value": "-1002023570425",
             "required": false
         },
         "ADMINS": {
             "description": "Username or ID of Admin. Separate multiple Admins by space.",
-            "value": "1310392234",
+            "value": "1310392234 1029462448",
             "required": true
         },
         "PICS": {
@@ -48,7 +50,7 @@
         },
         "LOG_CHANNEL": {
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
-            "value": "-1002095427762",
+            "value": "-1002033708116",
             "required": true
         },
         "AUTH_USERS": {
@@ -57,11 +59,12 @@
         },
         "AUTH_CHANNEL": {
             "description": "ID of channel.Make sure bot is admin in this channel. Without subscribing this channel users cannot use bot.",
-            "value": "-1001767321870",
+            "value": "-1002114485322",
             "required": false
         },
         "DATABASE_URI": {
             "description": "mongoDB URI. Get this value from https://www.mongodb.com. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
+            "value": "mongodb+srv://Vishal2001:Vishal2001@cluster0.cfbwqsp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
             "required": true
         },
         "DATABASE_NAME": {
