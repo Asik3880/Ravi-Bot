@@ -1,12 +1,12 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://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@github.com/Asik3880/Ravi-Bot.git /Fm-Filter-Bot
+  git clone https://github.com/Asik3880/Ravi-Bot /DQ-The-File-Donor
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /Fm-Filter-Bot
+  git clone $UPSTREAM_REPO /DQ-The-File-Donor
 fi
-cd /Fm-Filter-Bot
+cd /DQ-The-File-Donor
 pip3 install -U -r requirements.txt
-echo "Starting Bot...!!!"
+echo "Starting DQ-The-File-Donor...."
 python3 bot.py
